@@ -6,11 +6,13 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-<<<<<<< HEAD
+
 * Hi, my name is Zhaoqiu! 
-=======
+
+* Hi, I am Jason Peacock (jasonpeacock25), and I am looking forward to collaborating on this application!
+
 * Hi my name is Seohyeon Park. I am excited to start this journey.
->>>>>>> 40c2964ecbc9ccb443bfbd6407a2d82fc7f1133d
+
 * ...
 * ...
 	
