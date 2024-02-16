@@ -1,1 +1,22 @@
+.nav-item {
+    display: flex;
+}
 
+.btn-outline-success {
+    border-color: lightslategray;
+    color: lightslategray;
+}
+
+.btn-outline-success:hover {
+    background-color: lightsteelblue;
+    border-color: lightsteelblue;
+}
+
+.nav-background {
+    background-color: aliceblue;
+}
+
+.logo {
+    margin-right: 10px;
+
+}
