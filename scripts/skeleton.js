@@ -5,7 +5,7 @@
 function loadSkeleton() {
 
     firebase.auth().onAuthStateChanged(function (user) {
-        console.log(123);
+        // console.log(123);
         if (user) {                   //if the pointer to "user" object is not null, then someone is logged in
             // User is signed in.
             // Do something for the user here.

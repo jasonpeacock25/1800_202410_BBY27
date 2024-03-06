@@ -18,7 +18,6 @@
 
 .logo {
     margin-right: 10px;
-
 }
 
 .icon {
@@ -31,4 +30,73 @@
 .responsive {
     width: 100%;
     height: auto;
+}
+
+/*main page*/
+@media only screen and (max-width: 700px) {
+    .container-week, .current-month-days {
+        max-width: 700px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 70px);
+
+    }
+}
+
+/*main page*/
+.container-week, .current-month-days {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-week {
+    font-weight: bold;
+}
+
+.current-month {
+    max-width: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+.days {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+
+
+}
+
+.days:hover span {
+
+    background: lightgrey;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+.select-day span {
+
+    color: white;
+    font-weight: bold;
+    background: steelblue;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+
+}
+
+.previous-month-days {
+    color: lightgrey;
 }
