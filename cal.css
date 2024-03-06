@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: lightblue;
+    background-color: whitesmoke;
 }
 
 .wrapper {
@@ -38,12 +38,11 @@ header .icons span {
     display: inline-block;
     height: 38px;
     width: 38px;
-    background-color: grey;
+    background-color: lightsteelblue;
     margin: 0 1px;
     cursor: pointer;
     text-align: center;
     line-height: 38px; 
-    /* 신기하네 */
     border-radius: 50%;
     
 }
@@ -74,7 +73,7 @@ header .icons span:hover {
 }
 
 .calendar .days li:hover::before {
-    background-color: yellowgreen;
+    background-color: lightgrey;
 }
 
 .calendar {
@@ -90,7 +89,6 @@ header .icons span:hover {
 }
 
 .calendar .days li {
-    /* border: 1px solid; */
     margin-top: 30px;
     cursor: pointer;
 }
@@ -99,5 +97,5 @@ header .icons span:hover {
 }
 
 .days li.active::before {
-    background-color: purple;
+    background-color: steelblue;
 }
