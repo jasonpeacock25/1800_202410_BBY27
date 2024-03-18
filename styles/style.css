@@ -100,3 +100,117 @@
 .previous-month-days {
     color: lightgrey;
 }
+
+.btn-log-in {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    text-decoration: none;
+    color: steelblue;
+    border: 1px solid;
+    border-radius: 9999px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    justify-content: center;
+
+}
+
+.btn-create-account {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    color: white;
+    text-decoration: none;
+    background-color: steelblue;
+    border: 1px solid;
+    border-radius: 9999px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+
+}
+
+.nav-link {
+    padding: 5px;
+}
+
+.flex-basis {
+    text-align: center;
+}
+
+
+.container-align-right .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+
+/*dropdown button*/
+.dropbtn {
+    background-color: steelblue;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: steelblue;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+  
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 180px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.event-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.event-placeholder {
+
+    margin: 15px 0;
+
+}
+
+.event-time {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+}
