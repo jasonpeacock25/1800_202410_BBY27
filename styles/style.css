@@ -156,7 +156,7 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-bottom: 1rem;
+
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -166,7 +166,7 @@
 .dropdown {
     float: right;
     position: relative;
-  
+
 
 }
 
@@ -202,10 +202,14 @@
     align-items: center;
 }
 
+.event-type p {
+    margin-bottom: 0;
+}
+
 
 .event-placeholder {
 
-    margin: 15px 0;
+    margin: 10px 0;
 
 }
 
@@ -213,4 +217,24 @@
     background-color: aliceblue;
     border-radius: 5px;
     padding: 10px;
+}
+
+.event-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.event-repeat {
+
+    margin: 10px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-add {
+    width: 75px;
+    margin-top: 40px;
 }

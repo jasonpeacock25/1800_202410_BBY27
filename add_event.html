@@ -26,31 +26,7 @@
 </head>
 
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light nav-background">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="./images/date-and-time.png" height="36">
-                Calendar </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                        <a class="nav-link" href="#">About us</a>
-                        <a class="nav-link" href="#">Contact us</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav> -->
+
 
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
@@ -61,7 +37,7 @@
     <!-- Your HTML Layout go here -->
 
     <div>
-        <h3>CREATE NEW EVENT</h3>
+        <h3 class="event-title">New event</h3>
         <input class="form-control me-2 event-placeholder" type="Title" placeholder="Title" aria-label="Title">
         <div class="event-type">
             <p>Type: </p>
@@ -80,11 +56,35 @@
 
         <input class="form-control me-2 event-placeholder" type="Group" placeholder="Group" aria-label="Group">
         <div class="event-time">
-            <p>Time:</p>
-            <p>Starts:</p>
 
             <p>Starts:</p>
+            <input type="datetime-local" id="meeting-time" name="meeting-time" value="2024-03-20T19:30"
+                min="2023-03-20T00:00" max="2025-03-20T00:00" />
+
+            <p>Ends:</p>
+            <input type="datetime-local" id="meeting-time" name="meeting-time" value="2024-03-20T19:30"
+                min="2023-03-20T00:00" max="2025-03-20T00:00" />
         </div>
+
+        <form class=" event-type event-repeat">
+            <label for="repeat">Repeat:</label>
+            <select name="repeat" id="repeat">
+                <option value="never">Never</option>
+                <option value="everyday">Everyday</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+
+        </form>
+
+
+        <input class="form-control me-2 event-placeholder" type="Import-code" placeholder="Import-code"
+            aria-label="Import-code">
+
+        <form class="d-flex">
+            <button class="btn btn-outline-success btn-add" type="add">Add</button>
+            <button class="btn btn-outline-success btn-add" type="cancel">Cancel</button>
+        </form>
 
 
     </div>
@@ -97,7 +97,7 @@
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/authentication.js"></script>
-    <script src="./scripts/add_events.js"></script>
+    <script src="./scripts/add_event.js"></script>
 </body>
 
 </html>
