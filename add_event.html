@@ -36,7 +36,7 @@
 
     <!-- Your HTML Layout go here -->
 
-    <div>
+    <div class="event-layout">
         <h3 class="event-title">New event</h3>
         <input class="form-control me-2 event-placeholder" type="Title" placeholder="Title" aria-label="Title">
         <div class="event-type">
@@ -56,14 +56,17 @@
 
         <input class="form-control me-2 event-placeholder" type="Group" placeholder="Group" aria-label="Group">
         <div class="event-time">
-
-            <p>Starts:</p>
-            <input type="datetime-local" id="meeting-time" name="meeting-time" value="2024-03-20T19:30"
-                min="2023-03-20T00:00" max="2025-03-20T00:00" />
-
-            <p>Ends:</p>
-            <input type="datetime-local" id="meeting-time" name="meeting-time" value="2024-03-20T19:30"
-                min="2023-03-20T00:00" max="2025-03-20T00:00" />
+            <div class="event-type">
+                <p>Starts:</p>
+                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2024-03-20T19:30"
+                    min="2023-03-20T00:00" max="2025-03-20T00:00" />
+ 
+            </div>
+            <div class="event-type">
+                <p>Ends:</p>
+                <input type="datetime-local" id="meeting-time" name="meeting-time" value="2024-03-20T19:30"
+                    min="2023-03-20T00:00" max="2025-03-20T00:00" />
+            </div>
         </div>
 
         <form class=" event-type event-repeat">
@@ -82,7 +85,7 @@
             aria-label="Import-code">
 
         <form class="d-flex">
-            <button class="btn btn-outline-success btn-add" type="add">Add</button>
+            <button class="btn btn-outline-success btn-add" type="add" onclick="saveNewEvent()">Add</button>
             <button class="btn btn-outline-success btn-add" type="cancel">Cancel</button>
         </form>
 
