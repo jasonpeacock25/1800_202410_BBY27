@@ -200,6 +200,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
 }
 
 .event-type p {
@@ -209,7 +210,7 @@
 
 .event-placeholder {
 
-    margin: 10px 0;
+    margin: 20px 0;
 
 }
 
@@ -219,6 +220,8 @@
     padding: 10px;
 }
 
+
+
 .event-title {
     text-align: center;
     margin-top: 20px;
@@ -226,7 +229,7 @@
 
 .event-repeat {
 
-    margin: 10px;
+    margin: 20px 0;
 }
 
 .d-flex {
@@ -237,4 +240,9 @@
 .btn-add {
     width: 75px;
     margin-top: 40px;
+}
+
+.event-layout {
+    width: 80%;
+
 }
