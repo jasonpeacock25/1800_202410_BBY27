@@ -58,7 +58,7 @@ function readQuote(day) {
       
 }
 
-readQuote("tuesday");   
+readQuote("wednesday");   
 
 // const quotesCollection = db.collection("quotes");
 
