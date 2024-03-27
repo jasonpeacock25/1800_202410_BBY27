@@ -48,6 +48,7 @@ insertNameFromFirestore();
 // Function to read the quote of the day from the Firestore "quotes" collection
 // Input param is the String representing the day of the week, aka, the document name
 function readQuote(day) {
+<<<<<<< HEAD
     db.collection("quotes").doc(day)                                                      //name of the collection and documents should matach excatly with what you have in Firestore
         .onSnapshot(dayDoc => {                                                               //arrow notation
             console.log("current document data: " + dayDoc.data());                          //.data() returns data object
@@ -60,3 +61,34 @@ function readQuote(day) {
         })
 }
 readQuote("wednesday");        //calling the function
+=======
+    db.collection("quotes").doc(day)                                                      
+      .onSnapshot(dayDoc => {                                                              
+           console.log("current document data: " + dayDoc.data());                          
+           document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;      
+           
+           
+      })
+      
+}
+
+readQuote("tuesday");   
+
+// const quotesCollection = db.collection("quotes");
+
+// // Get all documents in the "quotes" collection
+// quotesCollection.get()
+//   .then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       // doc.data() is the data of each document
+//       console.log(doc.id);
+//     });
+//   })
+//   .catch((error) => {
+//     console.error("Error getting documents: ", error);
+//   });
+
+
+
+
+>>>>>>> 68a54c8c305fffefa3aab03b0dc2a3db2a091b98
