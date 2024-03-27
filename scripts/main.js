@@ -72,7 +72,7 @@ readQuote("wednesday");        //calling the function
       
 }
 
-readQuote("tuesday");   
+readQuote("wednesday");   
 
 // const quotesCollection = db.collection("quotes");
 
