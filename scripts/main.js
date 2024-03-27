@@ -48,31 +48,17 @@ insertNameFromFirestore();
 // Function to read the quote of the day from the Firestore "quotes" collection
 // Input param is the String representing the day of the week, aka, the document name
 function readQuote(day) {
-<<<<<<< HEAD
-    db.collection("quotes").doc(day)                                                      //name of the collection and documents should matach excatly with what you have in Firestore
-        .onSnapshot(dayDoc => {                                                               //arrow notation
-            console.log("current document data: " + dayDoc.data());                          //.data() returns data object
-            document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;      //using javascript to display the data on the right place
+    db.collection("quotes").doc(day)
+        .onSnapshot(dayDoc => {
+            console.log("current document data: " + dayDoc.data());
+            document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;
 
-            //Here are other ways to access key-value data fields
-            //$('#quote-goes-here').text(dayDoc.data().quote);         //using jquery object dot notation
-            //$("#quote-goes-here").text(dayDoc.data()["quote"]);      //using json object indexing
-            //document.querySelector("#quote-goes-here").innerHTML = dayDoc.data().quote;
+
         })
-}
-readQuote("wednesday");        //calling the function
-=======
-    db.collection("quotes").doc(day)                                                      
-      .onSnapshot(dayDoc => {                                                              
-           console.log("current document data: " + dayDoc.data());                          
-           document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;      
-           
-           
-      })
-      
+
 }
 
-readQuote("wednesday");   
+readQuote("wednesday");
 
 // const quotesCollection = db.collection("quotes");
 
@@ -91,4 +77,3 @@ readQuote("wednesday");
 
 
 
->>>>>>> 68a54c8c305fffefa3aab03b0dc2a3db2a091b98
