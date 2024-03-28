@@ -1,0 +1,63 @@
+[
+    {
+        "830" : null,
+        "930" : null,
+        "1030" : "COMP 1712 Lecture",
+        "1130" : "COMP 1712 Lecture",
+        "1230" : null,
+        "1330" : "COMP 1510 Lab",
+        "1430" : "COMP 1510 Lab",
+        "1530" : "COMP 1510 Lecture",
+        "1630" : null,
+        "night" : null
+    },
+    {
+        "830" : "COMP 1800 Lecture",
+        "930" : "COMP 1800 Lecture",
+        "1030" : "COMP 1712 Lab",
+        "1130" : "COMP 1712 Lab",
+        "1230" : null,
+        "1330" : "COMP 1113 Lab",
+        "1430" : "COMP 1113 Lab",
+        "1530" : "COMP 1116 Lecture",
+        "1630" : "COMP 1116 Lecture",
+        "night" : null
+    },
+    {
+        "830" : null,
+        "930" : null,
+        "1030" : "COMP 1110 Lecture",
+        "1130" : "COMP 1537 Lab",
+        "1230" : "COMP 1510 Lecture",
+        "1330" : null,
+        "1430" : null,
+        "1530" : null,
+        "1630" : null,
+        "night" : null
+    },
+    {
+        "830" : null,
+        "930" : "COMP 1800 Lab",
+        "1030" : "COMP 1800 Lab",
+        "1130" : "COMP 1510 Lecture",
+        "1230" : null,
+        "1330" : "COMP 1537 Lecture",
+        "1430" : "COMP 1537 Lecture",
+        "1530" : "COMP 1510 Lab",
+        "1630" : "COMP 1510 Tutorial",
+        "night" : null
+    },
+    {
+        "830" : null,
+        "930" : null,
+        "1030" : "COMP 1116 Lab",
+        "1130" : "COMP 1116 Lab",
+        "1230" : null,
+        "1330" : "COMP 1113 Lecture",
+        "1430" : "COMP 1113 Lecture",
+        "1530" : null,
+        "1630" : null,
+        "night" : null
+    }
+
+]
