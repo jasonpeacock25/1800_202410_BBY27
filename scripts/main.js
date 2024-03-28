@@ -47,18 +47,18 @@ insertNameFromFirestore();
 
 // Function to read the quote of the day from the Firestore "quotes" collection
 // Input param is the String representing the day of the week, aka, the document name
-function readQuote(day) {
-    db.collection("quotes").doc(day)
-        .onSnapshot(dayDoc => {
-            console.log("current document data: " + dayDoc.data());
-            document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;
+// function readQuote(day) {
+//     db.collection("quotes").doc(day)
+//         .onSnapshot(dayDoc => {
+//             console.log("current document data: " + dayDoc.data());
+//             document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;
 
 
-        })
+//         })
 
-}
+// }
 
-readQuote("wednesday");
+// readQuote("wednesday");
 
 // const quotesCollection = db.collection("quotes");
 

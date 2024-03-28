@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/cal.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/cal.js" defer></script>
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -57,13 +56,11 @@
     <nav id="navbarPlaceholder"></nav>
 
     <h1 class="display-4">Hi, <span id="name-goes-here"></span></h1>
-    <hr>
-<<<<<<< HEAD
-=======
+    <!-- <hr>
     <span id="quote-goes-here"></span>
-    <button id="add-quote">Change quote</button>
+    <button id="add-quote">Change quote</button> -->
 
-    <div id="input-container">
+    <!-- <div id="input-container">
         <div id="input">
             <input type="text" name="quote" id="quote-input" placeholder="e.g. Hard work pays off">
             <div id="open-close-btn">
@@ -71,13 +68,10 @@
                 <span id="close">&times;</span>
             </div>
         </div>
+    </div> -->
 
 
-    </div>
->>>>>>> 68a54c8c305fffefa3aab03b0dc2a3db2a091b98
-
-
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <header>
             <p class="current-date">Sep 2022</p>
             <div class="icons">
@@ -99,29 +93,109 @@
             </ul>
         </div>
     </div>
-    <div class="container">
+    <div class="container"> -->
 
-
-        <!-- <p>Quote of the day: <span id="quote-goes-here"></span></p> -->
-
-
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Matrix</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-            </ul>
-            <p class="text-center text-muted">2024 COMP 1800</p>
-        </footer>
+    <div class="calendar-container">
+        <div class="tableHead" id="th1"></div>
+        <div class="tableHead" id="th2">M</div>
+        <div class="tableHead" id="th3">T</div>
+        <div class="tableHead" id="th4">W</div>
+        <div class="tableHead" id="th5">Th</div>
+        <div class="tableHead" id="th6">F</div>
+        <div class="timeSlot" id="time830">830</div>
+        <div id="M830">830M</div>
+        <div id="T830">830T</div>
+        <div id="W830">830W</div>
+        <div id="Th830">830Th</div>
+        <div id="F830">830F</div>
+        <div class="timeSlot" id="time930">930</div>
+        <div id="M930">930M</div>
+        <div id="T930">930T</div>
+        <div id="W930">930W</div>
+        <div id="Th930">930Th</div>
+        <div id="F930">930F</div>
+        <div class="timeSlot" id="time1030">1030</div>
+        <div id="M1030">1030M</div>
+        <div id="T1030">1030T</div>
+        <div id="W1030">1030W</div>
+        <div id="Th1030">1030Th</div>
+        <div id="F1030">1030F</div>
+        <div class="timeSlot" id="time1130">1130</div>
+        <div id="M1130">1130M</div>
+        <div id="T1130">1130T</div>
+        <div id="W1130">1130W</div>
+        <div id="Th1130">1130Th</div>
+        <div id="F1130">1130F</div>
+        <div class="timeSlot" id="time1230">1230</div>
+        <div id="M1230">1230M</div>
+        <div id="T1230">1230T</div>
+        <div id="W1230">1230W</div>
+        <div id="Th1230">1230Th</div>
+        <div id="F1230">1230F</div>
+        <div class="timeSlot" id="time1330">130</div>
+        <div id="M1330">130M</div>
+        <div id="T1330">130T</div>
+        <div id="W1330">130W</div>
+        <div id="Th1330">130Th</div>
+        <div id="F1330">130F</div>
+        <div class="timeSlot" id="time1430">230</div>
+        <div id="M1430">230M</div>
+        <div id="T1430">230T</div>
+        <div id="W1430">230W</div>
+        <div id="Th1430">230Th</div>
+        <div id="F1430">230F</div>
+        <div class="timeSlot" id="time1530">330</div>
+        <div id="M1530">330M</div>
+        <div id="T1530">330T</div>
+        <div id="W1530">330W</div>
+        <div id="Th1530">330Th</div>
+        <div id="F1530">330F</div>
+        <div class="timeSlot" id="time1630">430</div>
+        <div id="M1630">430M</div>
+        <div id="T1630">430T</div>
+        <div id="W1630">430W</div>
+        <div id="Th1630">430Th</div>
+        <div id="F1630">430F</div>
+        <div class="timeSlot" id="time1730">530</div>
+        <div id="M1730">530M</div>
+        <div id="T1730">530T</div>
+        <div id="W1730">530W</div>
+        <div id="Th1730">530Th</div>
+        <div id="F1730">530F</div>
+        <div class="timeSlot" id="timeNight">Night</div>
+        <div id="nightM">NightM</div>
+        <div id="nightW">NightT</div>
+        <div id="nightT">NightW</div>
+        <div id="nightTh">NightTh</div>
+        <div id="nightF">NightF</div>
     </div>
+
+
+    <!-- <p>Quote of the day: <span id="quote-goes-here"></span></p> -->
+
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Matrix</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+        <p class="text-center text-muted">2024 COMP 1800</p>
+    </footer>
+    </div>
+
+
+
     <script src="./scripts/script.js"></script>
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/authentication.js"></script>
+    <!-- <script src="./scripts/authentication.js"></script> -->
     <script src="./scripts/main.js"></script>
-    <script src="./scripts/add_quote.js"></script>
+    <!-- <script src="./scripts/add_quote.js"></script> -->
+    <script src="./scripts/calendar.js"></script>
+    <!-- <script src="scripts/cal.js" defer></script> -->
 </body>
 
 </html>
