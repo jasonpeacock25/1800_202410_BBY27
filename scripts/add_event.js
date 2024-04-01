@@ -66,24 +66,42 @@ function saveNewEvent() {
         console.log("inside saveNewEvent");
         let eventTitle = document.getElementById("titleInput1").value;
         let eventType = document.querySelector(".dropbtn").innerHTML;
-        let eventLocation = document.getElementById("locationInput1").value;
-        let eventGroup = document.getElementById("groupInput1").value;
+        // let eventLocation = document.getElementById("locationInput1").value;
+        // let eventGroup = document.getElementById("groupInput1").value;
         let eventRepeat = document.forms["repeatFrequency"]["repeat"].value;
         let eventStart = document.getElementById("startTime").value;
         let eventEnd = document.getElementById("endTime").value;
         let userID = user.uid;
 
-        eventsRef.add({
+        const payload = {
             title: eventTitle,
             type: eventType,
-            location: eventLocation,
-            group: eventGroup,
+            // location: eventLocation,
+            // group: eventGroup,
             starts: eventStart,
             ends: eventEnd,
             repeat: eventRepeat,
             inputTime: firebase.firestore.FieldValue.serverTimestamp(),
             user: userID
-        }).then(function () {
+        }
+
+        const payloadKeys = Object.keys(payload);
+        const isPayloadValid = true;
+        for (let i = 0; i < payloadKeys.length; i++) {
+            if (!payload[payloadKeys[i]]) {
+                alert(payloadKeys[i] + " is not valid !");
+                isPayloadValid = false;
+                break;
+            }
+        }
+
+        if (!isPayloadValid) return;
+
+        eventsRef.add(payload).then(function () {
+
+            history.pushState({}, "", window.location.origin + "/main.html");
+            history.go();
+
             console.log("New Event Added");
         }).catch(function (error) {
             console.log("Error adding new event: " + error);
@@ -93,7 +111,10 @@ function saveNewEvent() {
     }
 }
 
-function tempFunction() {
+function handleCancel() {
+    history.back();
     console.log("Cancel Clicked");
+
     // window.location.assign("main.html");       //re-direct to main.html
 }
+
