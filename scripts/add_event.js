@@ -1,28 +1,3 @@
-// var currentUser;               //points to the document of the user who is logged in
-// function populateUserInfo() {
-//     firebase.auth().onAuthStateChanged(user => {
-//         // Check if user is signed in:
-//         if (user) {
-
-//             //go to the correct user document by referencing to the user uid
-//             currentUser = db.collection("users").doc(user.uid)
-//             //get the document for current user
-//             currentUser.get()
-//                 .then(userDoc => {
-//                     //get the data fields of the user
-//                     let userName = userDoc.data().name;
-//                     let userSchool = userDoc.data().school;
-//                     let userCity = userDoc.data().city;
-
-//                     console.log(userName + "SWAWS");
-//                 })
-//         } else {
-//             // No user is signed in.
-//             console.log("No user is signed in");
-//         }
-//     });
-// }
-// populateUserInfo();
 
 /* When the user clicks on the button, 
      toggle between hiding and showing the dropdown content */
@@ -57,6 +32,8 @@ window.onclick = function (event) {
         }
     }
 }
+
+
 
 function saveNewEvent() {
     let user = firebase.auth().currentUser;
