@@ -69,12 +69,15 @@ function populateData() {
         }
 
         if (countBlocks == timeSlots && countEmptyBlocks < studyHours) {
+            let hoursRequired = studyHours - countEmptyBlocks;
             div.classList.add('nightExceed');
-            div.innerText = "Hours Required: " + (studyHours - countEmptyBlocks);
+            div.setAttribute('data-hoursRequired', hoursRequired);
+            div.innerText = "Hours Required: " + hoursRequired;
             countBlocks = 0;
             countEmptyBlocks = 0;
         } else if (countBlocks == timeSlots) {
             div.classList.add('night');
+            div.setAttribute('data-hoursRequired', 0);
             div.innerText = "Hours Required: " + (studyHours - countEmptyBlocks);
             countBlocks = 0;
             countEmptyBlocks = 0;
@@ -90,7 +93,6 @@ function populateData() {
 function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     let content = event.target.innerHTML;
-    //let studyClass = event.target.getAttribute('class');
     let studyClass = event.target.getAttribute('class');
     console.log(studyClass);
     if (studyClass.includes('studyDone')) {
