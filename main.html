@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/cal.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+    <!-- <link rel="stylesheet" href="styles/demo2.css"> -->
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -25,75 +26,20 @@
 </head>
 
 <body>
-    <div id="overlay"></div>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light nav-background">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="./images/date-and-time.png" height="36">
-                Calendar </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                        <a class="nav-link" href="#">About us</a>
-                        <a class="nav-link" href="#">Contact us</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav> -->
+    <!-- <div id="overlay"></div> -->
 
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <h1 class="display-4">Hi, <span id="name-goes-here"></span></h1>
-    <!-- <hr>
-    <span id="quote-goes-here"></span>
-    <button id="add-quote">Change quote</button> -->
+    <div class="display-4">
+        <h1 class="flex-basis">Hi, <span id="name-goes-here"></span></h1>
+    </div>
 
-    <!-- <div id="input-container">
-        <div id="input">
-            <input type="text" name="quote" id="quote-input" placeholder="e.g. Hard work pays off">
-            <div id="open-close-btn">
-                <span id="add">&#x25CB;</span>
-                <span id="close">&times;</span>
-            </div>
+    <!-- <div id="updatedCalendar">
+        <div id="time-table">
+            <div id="days"></div>
         </div>
     </div> -->
-
-
-    <!-- <div class="wrapper">
-        <header>
-            <p class="current-date">Sep 2022</p>
-            <div class="icons">
-                <span id="prev" class="material-symbols-rounded">&lt;</span>
-                <span id="next" class="material-symbols-rounded">&gt;</span>
-            </div>
-        </header>
-        <div class="calendar">
-            <ul class="weeks">
-                <li>Sun</li>
-                <li>Mon</li>
-                <li>Tues</li>
-                <li>Wed</li>
-                <li>Thur</li>
-                <li>Fri</li>
-                <li>Sat</li>
-            </ul>
-            <ul class="days">
-            </ul>
-        </div>
-    </div>
-    <div class="container"> -->
 
     <div class="calendar-container">
         <div class="tableHead" id="th1"></div>
@@ -170,21 +116,8 @@
         <div id="nightF">NightF</div>
     </div>
 
-
-    <!-- <p>Quote of the day: <span id="quote-goes-here"></span></p> -->
-
-
-    <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Matrix</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-        </ul>
-        <p class="text-center text-muted">2024 COMP 1800</p>
-    </footer>
-    </div>
+    <!-- our own footer goes here-->
+    <!--<nav id="footerPlaceholder"></nav>-->
 
 
 
@@ -195,6 +128,7 @@
     <script src="./scripts/main.js"></script>
     <!-- <script src="./scripts/add_quote.js"></script> -->
     <script src="./scripts/calendar.js"></script>
+    <!-- <script src="./scripts/demo2.js"></script> -->
     <!-- <script src="scripts/cal.js" defer></script> -->
 </body>
 
