@@ -34,7 +34,9 @@
 
 /*main page*/
 @media only screen and (max-width: 700px) {
-    .container-week, .current-month-days {
+
+    .container-week,
+    .current-month-days {
         max-width: 700px;
         margin: 0 auto;
         display: grid;
@@ -44,7 +46,8 @@
 }
 
 /*main page*/
-.container-week, .current-month-days {
+.container-week,
+.current-month-days {
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 70px);
@@ -149,7 +152,8 @@
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: steelblue;
 }
 
@@ -211,7 +215,8 @@
     margin-top: 20px;
 }
 
-.event-repeat, .btn-logout {
+.event-repeat,
+.btn-logout {
     margin: 20px 0;
 }
 
@@ -255,7 +260,8 @@
     z-index: 2;
 }
 
-#add, #close {
+#add,
+#close {
     cursor: pointer;
 }
 
@@ -320,50 +326,31 @@
     align-items: center;
 }
 
-/*
-*START OF UPDATED CALENDAR CODE CODE
-*/
-
-.calendar-container {
-    margin-top: 30px;
-    text-align: center;
-    display: grid;
-    height: 60vh;
-    width: 70%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+#welcomeDiv {
+    height: calc(100% - 62px);
+    width: 100%;
+    padding: 10%;
 }
 
-.calendar-container div {
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 3px;
+nav {
+    width: 100%;
 }
 
-.timeSlot {
-    background-color: teal;
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    flex-direction: column;
 }
 
-#th2, #th3, #th4, #th5, #th6 {
-    background-color: cyan;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#M1030, #M1130, #M1430, #T830, #T930, #T1230, #W1030, #W1130, #W230, #Th1230, #Th1330, #Th1430, #F830, #F930, #F1230 {
-    background-color: lightgoldenrodyellow;
-}
-
-#M830, #M930, #M1230, #M1330, #T1030, #T1130, #W830, #W930, #W1230, #W1330, #Th830, #Th930, #Th1030, #Th1130, #F1030, #F1130 {
-    background-color: purple;
-}
-
-#nightM, #nightT, #nightW, #nightTh, #nightF {
-    background-color: red;
-}
-
-table, th, td {
-    border: 1px solid;
-    border-collapse: collapse;
-    padding-right: 3px;
-    padding-left: 3px;
-}
+/* CALENDAR */
