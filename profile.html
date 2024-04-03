@@ -36,8 +36,10 @@
     <!-- Your HTML Layout go here -->
 
     <div class="container">
-        <h1 class="event-title">User Profile </h1>
+        <h2 class="event-title">User Profile </h2>
+
         <img id="profile" alt="profile" src="/images/user-settings.png">
+        <h5 class="event-title"> Click on "Edit" button below to fill in!"</h5>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
@@ -63,31 +65,42 @@
                 </div>
 
             </fieldset>
-            <div class="d-flex justify-content-end mt-5">
+
+        </form>
+
+
+        <div class="form-group alice-blue">
+            <h5 class="event-title"> Setting</h5>
+            <form class="event-type event-repeat" name="repeatFrequency">
+                <label for="repeat">Color scheme:</label>
+                <select name="repeat">
+                    <option value="never">Default</option>
+                    <option value="everyday">Customize</option>
+
+                </select>
+
+
+            </form>
+
+            <div class="study-goal">
+                <label for="">Study goal:</label>
+                <div class="study-hours">
+                    <input class=" study-hour event-placeholder" type="text" id="studyHourInput" placeholder="0">
+                    <label for="">Hours Per Week</label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
                 <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
                 <span style="width: 10px"></span>
                 <button type="button" class="btn  btn-steel-blue" onclick="saveUserInfo()">Save</button>
             </div>
 
-        </form>
-
-
-        <div class="form-group">
-            <label>Settings</label>
-            <form class="event-type event-repeat" name="repeatFrequency">
-                <label for="repeat">Color scheme:</label>
-                <select name="repeat">
-                    <option value="never">Default</option>
-                    <option value="everyday">Important</option>
-
-                </select>
-            </form>
         </div>
 
 
         <form class="d-flex">
 
-            <button class="btn btn-outline-success" type="logout">Log out</button>
+            <button class="btn btn-outline-success btn-logout" type="logout" onclick="handleLogout()">Log out</button>
         </form>
     </div>
 
@@ -111,7 +124,12 @@
     <!-- <script src="./scripts/main.js"></script> -->
 
     <script>
-        // logout();       //make sure user is logged out
+        const handleLogout = () => {
+            logout(() => {
+                window.location.href = "/welcome.html";
+            })
+        }
+
     </script>
 
 </body>

@@ -14,7 +14,9 @@ function populateUserInfo() {
                     //get the data fields of the user
                     let userName = userDoc.data().name;
                     let userSchool = userDoc.data().school;
-                    let userCity = userDoc.data().city;
+                    let userMajor = userDoc.data().major;
+                    let userSet = userDoc.data().set;
+                    let userStudyHour = userDoc.data().studyHour;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -23,8 +25,14 @@ function populateUserInfo() {
                     if (userSchool != null) {
                         document.getElementById("schoolInput").value = userSchool;
                     }
-                    if (userCity != null) {
-                        document.getElementById("cityInput").value = userCity;
+                    if (userMajor != null) {
+                        document.getElementById("majorInput").value = userMajor;
+                    }
+                    if (userSet != null) {
+                        document.getElementById("setInput").value = userSet;
+                    }
+                    if (userStudyHour != null) {
+                        document.getElementById("studyHourInput").value = userStudyHour;
                     }
                 })
         } else {
@@ -50,12 +58,14 @@ function saveUserInfo() {
     userSchool = document.getElementById('schoolInput').value;     //get the value of the field with id="schoolInput"
     userMajor = document.getElementById('majorInput').value;       //get the value of the field with id="cityInput"
     userSet = document.getElementById('setInput').value;
+    userStudyHour = document.getElementById('studyHourInput').value;
     //b) update user's document in Firestore
     currentUser.update({
         name: userName,
         school: userSchool,
         major: userMajor,
-        set: userSet
+        set: userSet,
+        studyHour: userStudyHour
     })
         .then(() => {
             console.log("Document successfully updated!");

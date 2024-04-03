@@ -21,8 +21,8 @@
 }
 
 .icon {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     margin-top: 5px;
     margin-right: 15px;
 }
@@ -63,15 +63,11 @@
     font-weight: bold;
 }
 
-
-
 .days {
     margin-top: 20px;
     margin-bottom: 20px;
     color: black;
     text-decoration: none;
-
-
 }
 
 .days:hover span {
@@ -94,7 +90,6 @@
     height: 25px;
     display: inline-block;
     line-height: 25px;
-
 }
 
 .previous-month-days {
@@ -113,7 +108,6 @@
     margin-bottom: 10px;
     font-weight: bold;
     justify-content: center;
-
 }
 
 .btn-create-account {
@@ -129,7 +123,6 @@
     text-align: center;
     font-weight: bold;
     justify-content: center;
-
 }
 
 .nav-link {
@@ -140,13 +133,11 @@
     text-align: center;
 }
 
-
 .container-align-right .navbar-nav {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
 }
-
 
 /*dropdown button*/
 .dropbtn {
@@ -156,7 +147,6 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -166,8 +156,6 @@
 .dropdown {
     float: right;
     position: relative;
-
-
 }
 
 .dropdown-content {
@@ -207,29 +195,23 @@
     margin-bottom: 0;
 }
 
-
 .form-group .event-placeholder {
-
-    margin: 20px 0;
-    background-color: transparent !important;
-
+    margin: 10px 0;
 }
 
-.event-time {
+.alice-blue {
     background-color: aliceblue;
     border-radius: 5px;
     padding: 10px;
+    margin-top: 20px;
 }
-
-
 
 .event-title {
     text-align: center;
     margin-top: 20px;
 }
 
-.event-repeat {
-
+.event-repeat, .btn-logout {
     margin: 20px 0;
 }
 
@@ -244,8 +226,7 @@
 }
 
 .event-layout {
-    width: 80%;
-
+    width: 70%;
 }
 
 #add-quote {
@@ -259,7 +240,6 @@
 #add-quote:hover {
     background-color: black;
     color: white;
-
 }
 
 #input {
@@ -269,7 +249,6 @@
     width: 300px;
     justify-content: space-between;
     align-items: center;
-
     animation-name: animateinputcontainer;
     animation-duration: .4s;
     position: relative;
@@ -309,4 +288,82 @@
 .btn-steel-blue {
     background-color: steelblue !important;
     color: white !important;
+}
+
+.study-goal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.study-hour {
+
+    width: 25%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    /* line-height: 1.5; */
+    /* color: var(--bs-body-color); */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.study-hours {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*
+*START OF UPDATED CALENDAR CODE CODE
+*/
+
+.calendar-container {
+    margin-top: 30px;
+    text-align: center;
+    display: grid;
+    height: 60vh;
+    width: 70%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.calendar-container div {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 3px;
+}
+
+.timeSlot {
+    background-color: teal;
+}
+
+#th2, #th3, #th4, #th5, #th6 {
+    background-color: cyan;
+}
+
+#M1030, #M1130, #M1430, #T830, #T930, #T1230, #W1030, #W1130, #W230, #Th1230, #Th1330, #Th1430, #F830, #F930, #F1230 {
+    background-color: lightgoldenrodyellow;
+}
+
+#M830, #M930, #M1230, #M1330, #T1030, #T1130, #W830, #W930, #W1230, #W1330, #Th830, #Th930, #Th1030, #Th1130, #F1030, #F1130 {
+    background-color: purple;
+}
+
+#nightM, #nightT, #nightW, #nightTh, #nightF {
+    background-color: red;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding-right: 3px;
+    padding-left: 3px;
 }
