@@ -14,15 +14,15 @@ function retrieveSchedule() {
         }
 
     }).then(data => {
-        // console.log(data);
+        //console.log(data);
         data.forEach(each => { // monday tuesday .. 
-            console.log(each);
+            //console.log(each);
             Object.keys(each).forEach(key => {
                 classes.push(each[key])
             })
 
         })
-        // console.log(classes);
+        console.log(classes);
         populateTime(times)
         populateData()
 

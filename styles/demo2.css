@@ -1,0 +1,70 @@
+/* body {
+    border: 1px solid;
+} */
+
+#greeting-container {
+
+}
+#updatedCalendar {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-table {
+    height: 60%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    background-color: aliceblue;
+    grid-auto-flow: column;
+    border-collapse: collapse;
+    /* border: 1px solid black; */
+    
+}
+
+.table {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#days {
+    grid-row: 1;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    background-color: rgba(204, 195, 195, 0.648);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.times {
+    background-color: rgba(204, 195, 195, 0.648);
+}
+
+.school {
+    background-color: rgb(24, 180, 115);
+}
+
+.study {
+    background-color: rgb(255, 171, 67);
+    cursor: pointer;
+}
+
+.studyDone {
+    background-color: rgb(122, 0, 114);
+    cursor: pointer;
+}
+
+.night {
+    background-color: rgb(155, 155, 155);
+}
+
+.nightExceed {
+    background-color: rgb(255, 67, 67);
+}
