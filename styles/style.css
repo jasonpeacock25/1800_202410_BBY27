@@ -1,6 +1,9 @@
 .nav-item {
     display: flex;
+    align-items: center;
+
 }
+
 
 .btn-outline-success {
     border-color: steelblue !important;
@@ -42,7 +45,14 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, 70px);
 
+
     }
+}
+
+.navbar-collapse {
+ 
+   display: flex;
+    align-items: center;
 }
 
 /*main page*/
@@ -351,4 +361,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+.navbar-brand{
+margin: 10px;
 }
