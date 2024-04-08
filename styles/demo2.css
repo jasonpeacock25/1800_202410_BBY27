@@ -2,9 +2,8 @@
     border: 1px solid;
 } */
 
-#greeting-container {
+#greeting-container {}
 
-}
 #updatedCalendar {
     padding: 0;
     margin: 0;
@@ -24,10 +23,10 @@
     grid-auto-flow: column;
     border-collapse: collapse;
     /* border: 1px solid black; */
-    
+
 }
 
-.table {
+.custom-table-cell {
     border: 1px solid black;
     display: flex;
     align-items: center;

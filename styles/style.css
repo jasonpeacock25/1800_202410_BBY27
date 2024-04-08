@@ -1,9 +1,19 @@
 .nav-item {
     display: flex;
     align-items: center;
-
 }
 
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-placeholder {
+
+    height: 76px;
+}
 
 .btn-outline-success {
     border-color: steelblue !important;
@@ -19,15 +29,10 @@
     background-color: aliceblue;
 }
 
-.logo {
-    margin-right: 10px;
-}
-
 .icon {
     width: 35px;
     height: 35px;
     margin-top: 5px;
-    margin-right: 15px;
 }
 
 .responsive {
@@ -44,14 +49,12 @@
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fill, 70px);
-
-
     }
 }
 
 .navbar-collapse {
- 
-   display: flex;
+
+    display: flex;
     align-items: center;
 }
 
@@ -138,8 +141,10 @@
     justify-content: center;
 }
 
-.nav-link {
-    padding: 5px;
+.header-nav-link {
+    padding: 10px !important;
+    color: steelblue;
+    text-decoration: none;
 }
 
 .flex-basis {
@@ -152,61 +157,8 @@
     flex-direction: row;
 }
 
-/*dropdown button*/
-.dropbtn {
-    background-color: steelblue;
-    color: white;
-    padding: 8px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: steelblue;
-}
-
-.dropdown {
-    float: right;
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 180px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    right: 0;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-    background-color: #ddd;
-}
-
 .show {
     display: block;
-}
-
-.event-type {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.event-type p {
-    margin-bottom: 0;
 }
 
 .form-group .event-placeholder {
@@ -233,15 +185,6 @@
 .d-flex {
     display: flex;
     justify-content: space-evenly;
-}
-
-.btn-add {
-    width: 75px;
-    margin-top: 40px;
-}
-
-.event-layout {
-    width: 70%;
 }
 
 #add-quote {
@@ -296,9 +239,13 @@
 }
 
 #profile {
-    width: 120px;
+    width: 80px;
     display: flex;
     margin: 0 auto;
+}
+
+.profile-container {
+    width: 85%;
 }
 
 .btn-steel-blue {
@@ -314,7 +261,7 @@
 
 .study-hour {
 
-    width: 25%;
+    width: 20%;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -363,7 +310,10 @@ body {
     box-sizing: border-box;
 }
 
+.navbar-brand {
+    margin: 5px;
+}
 
-.navbar-brand{
-margin: 10px;
+.firebaseui-container {
+    border-radius: 20px;
 }

@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 27 project</title>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel="stylesheet" href="styles/calendar.css"> -->
+    <link rel="stylesheet" href="styles/report.css">
     <link rel="stylesheet" href="styles/demo2.css">
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -22,32 +24,16 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-
 </head>
 
 <body>
-    <!-- <div id="overlay"></div> -->
-
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-
-    <div id="greeting-container">
-        <h1 class="display-4">Hi, <span id="name-goes-here"></span></h1>
-        <div id="set"></div>
-
+    <h2 class="mt-5">Study Report</h2>
+    <div class="report-canvas">
+        <canvas id="report" class="mt-5"></canvas>
     </div>
-
-    <div id="updatedCalendar">
-        <div id="time-table">
-            <div id="days"></div>
-        </div>
-    </div>
-
-
-    <!-- our own footer goes here-->
-    <!--<nav id="footerPlaceholder"></nav>-->
-
 
 
     <script src="./scripts/script.js"></script>
@@ -55,9 +41,10 @@
     <script src="./scripts/skeleton.js"></script>
     <!-- <script src="./scripts/authentication.js"></script> -->
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/report.js"></script>
     <!-- <script src="./scripts/add_quote.js"></script> -->
     <!-- <script src="./scripts/calendar.js"></script> -->
-    <script src="./scripts/demo2.js"></script>
+    <!-- <script src="./scripts/demo2.js"></script> -->
     <!-- <script src="scripts/cal.js" defer></script> -->
 </body>
 

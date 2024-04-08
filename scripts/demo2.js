@@ -35,11 +35,11 @@ retrieveSchedule()
 
 
 function populateTime(times) {
-    let div = `<div class="table"></div>` // empty slot
+    let div = `<div class="custom-table-cell"></div>` // empty slot
 
 
     for (let i = 0; i < times.length; i++) {
-        div += `<div class="table times">${times[i]}</div>`
+        div += `<div class="custom-table-cell times">${times[i]}</div>`
     }
     table.innerHTML += div
 }
@@ -53,7 +53,7 @@ function populateData() {
     let countEmptyBlocks = 0;
     for (let j = 0; j < classes.length; j++) {
         let div = document.createElement('div');
-        div.classList.add('table');
+        div.classList.add('custom-table-cell');
         div.setAttribute('id', 'tableElement' + j);
         div.setAttribute('data-index', j);
 
@@ -99,7 +99,7 @@ function displayClickMessage(event) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('study');
         console.log("Changed from studyDone");
-    } else if (studyClass.includes('study')){
+    } else if (studyClass.includes('study')) {
         event.target.classList.remove('study');
         event.target.classList.add('studyDone');
         console.log("Changed from studyDone");
@@ -112,7 +112,7 @@ function displayClickMessage(event) {
 function populateDays() {
     let div = ""
     days.forEach(day => {
-        div += `<div class="table">${day}</div>`
+        div += `<div class="custom-table-cell">${day}</div>`
     })
     //console.log(div);
     daysCol.innerHTML = div
