@@ -1,14 +1,4 @@
- .btn-outline-success {
-     border-color: steelblue !important;
-     color: lightslategray !important;
- }
-
- .btn-outline-success:hover {
-     background-color: steelblue !important;
-     color: white !important;
- }
-
- /*dropdown button*/
+  /*dropdown button*/
  .dropbtn {
      background-color: steelblue;
      color: white;

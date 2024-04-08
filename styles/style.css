@@ -1,3 +1,48 @@
+/* buttons */
+.btn-outline-success {
+    border-color: steelblue !important;
+    color: lightslategray !important;
+}
+
+.btn-outline-success:hover {
+    background-color: steelblue !important;
+    color: white !important;
+}
+
+.btn-log-in {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    text-decoration: none;
+    color: steelblue;
+    border: 1px solid;
+    border-radius: 9999px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.btn-create-account {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    color: white;
+    text-decoration: none;
+    background-color: steelblue;
+    border: 1px solid;
+    border-radius: 9999px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+}
+
+/* navbar */
+nav {
+    width: 100%;
+}
+
 .nav-item {
     display: flex;
     align-items: center;
@@ -10,19 +55,12 @@
     z-index: 100;
 }
 
+.navbar-brand {
+    margin: 5px;
+}
+
 .nav-placeholder {
-
     height: 76px;
-}
-
-.btn-outline-success {
-    border-color: steelblue !important;
-    color: lightslategray !important;
-}
-
-.btn-outline-success:hover {
-    background-color: steelblue !important;
-    color: white !important;
 }
 
 .nav-background {
@@ -53,7 +91,6 @@
 }
 
 .navbar-collapse {
-
     display: flex;
     align-items: center;
 }
@@ -87,7 +124,6 @@
 }
 
 .days:hover span {
-
     background: lightgrey;
     border-radius: 50%;
     width: 25px;
@@ -97,7 +133,6 @@
 }
 
 .select-day span {
-
     color: white;
     font-weight: bold;
     background: steelblue;
@@ -110,35 +145,6 @@
 
 .previous-month-days {
     color: lightgrey;
-}
-
-.btn-log-in {
-    display: flex;
-    margin: 0 auto;
-    width: 60%;
-    text-decoration: none;
-    color: steelblue;
-    border: 1px solid;
-    border-radius: 9999px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    justify-content: center;
-}
-
-.btn-create-account {
-    display: flex;
-    margin: 0 auto;
-    width: 60%;
-    color: white;
-    text-decoration: none;
-    background-color: steelblue;
-    border: 1px solid;
-    border-radius: 9999px;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    justify-content: center;
 }
 
 .header-nav-link {
@@ -161,25 +167,11 @@
     display: block;
 }
 
-.form-group .event-placeholder {
-    margin: 10px 0;
-}
-
 .alice-blue {
     background-color: aliceblue;
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
-}
-
-.event-title {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.event-repeat,
-.btn-logout {
-    margin: 20px 0;
 }
 
 .d-flex {
@@ -238,59 +230,10 @@
     z-index: 0;
 }
 
-#profile {
-    width: 80px;
-    display: flex;
-    margin: 0 auto;
-}
-
-.profile-container {
-    width: 85%;
-}
-
-.btn-steel-blue {
-    background-color: steelblue !important;
-    color: white !important;
-}
-
-.study-goal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.study-hour {
-
-    width: 20%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    /* line-height: 1.5; */
-    /* color: var(--bs-body-color); */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.study-hours {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 #welcomeDiv {
     height: calc(100% - 62px);
     width: 100%;
     padding: 10%;
-}
-
-nav {
-    width: 100%;
 }
 
 body {
@@ -308,10 +251,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.navbar-brand {
-    margin: 5px;
 }
 
 .firebaseui-container {
