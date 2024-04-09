@@ -46,23 +46,24 @@ function populateTime(times) {
 
 
 
-
-
 function populateData() {
+    // console.log(classes);
     let countBlocks = 0;
     let countEmptyBlocks = 0;
     for (let j = 0; j < classes.length; j++) {
         let div = document.createElement('div');
         div.classList.add('table');
         div.setAttribute('id', 'tableElement' + j);
-        div.setAttribute('data-index', j);
+        div.setAttribute('data-index', j); // custom attribute 
 
         let data = classes[j];
+        // console.log(data);
 
         div.innerText = data; // if innerText value is null, nothing will appear 
         if (data) {
             div.classList.add('school');
-        } else if (countEmptyBlocks < studyHours && countBlocks != timeSlots) {
+            //study hours set to 3, timeslots set to 9
+        } else if (countEmptyBlocks < studyHours && countBlocks != timeSlots) { 
             countEmptyBlocks++;
             div.innerText = "Study Block " + countEmptyBlocks;
             div.classList.add('study');
@@ -94,7 +95,7 @@ function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
-    console.log(studyClass);
+    // console.log(studyClass);
     if (studyClass.includes('studyDone')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('study');

@@ -38,31 +38,31 @@
     grid-row: 1;
     grid-column-start: 2;
     grid-column-end: 7;
-    background-color: rgba(204, 195, 195, 0.648);
+    background-color: rgba(236, 227, 227, 0.648);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
 
 .times {
-    background-color: rgba(204, 195, 195, 0.648);
+    background-color: rgba(236, 227, 227, 0.648);
 }
 
 .school {
-    background-color: rgb(24, 180, 115);
+    background-color: rgba(162, 153, 153, 0.648);
 }
 
 .study {
-    background-color: rgb(255, 171, 67);
+    background-color: rgb(231, 171, 81);
     cursor: pointer;
 }
 
 .studyDone {
-    background-color: rgb(122, 0, 114);
+   text-decoration: line-through;
     cursor: pointer;
 }
 
 .night {
-    background-color: rgb(155, 155, 155);
+    background-color: rgb(255, 255, 255);
 }
 
 .nightExceed {
