@@ -1,0 +1,79 @@
+@media only screen and (max-width: 800px) {
+
+    .portfolio-container {
+        padding: 0 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-portfolio {
+        max-width: 400px;
+    }
+
+    .team-text {
+        font-size: 10px;
+    }
+}
+
+.about-title {
+    margin: 20px;
+    text-align: center;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-portfolio {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.col {
+    flex-shrink: 1;
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+}
+
+.col img {
+    width: 100%;
+}
+
+.about-name-card {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 20px 20px 0;
+    padding: 50px;
+}
+
+.about-name {
+    font-weight: bold;
+    color: steelblue;
+}
+
+.about-name-details {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Poppins", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h3, h4, h5 {
+    font-family: sans-serif;
+}
+
+.team-text {
+    font-size: 16px;
+}
+
+.team-name {
+    color: steelblue;
+    font-weight: bold;
+}

@@ -1,0 +1,85 @@
+.form-group .event-placeholder {
+    margin: 10px 0;
+}
+
+.alice-blue {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.profile-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-repeat,
+.btn-logout {
+    margin: 20px 0;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#profile {
+    width: 80px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.profile-container {
+    width: 85%;
+}
+
+.btn-steel-blue {
+    background-color: steelblue !important;
+    color: white !important;
+}
+
+.study-goal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.study-hour {
+    width: 20%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    /* line-height: 1.5; */
+    /* color: var(--bs-body-color); */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.study-hours {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#welcomeDiv {
+    height: calc(100% - 62px);
+    width: 100%;
+    padding: 10%;
+}
+
+nav {
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

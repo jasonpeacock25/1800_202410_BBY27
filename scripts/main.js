@@ -1,0 +1,64 @@
+
+// Get user name and show in main page after log in.
+function insertNameFromFirestore() {
+    // Check if the user is logged in:
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log(user.uid); // Let's know who the logged-in user is by logging their UID
+            currentUser = db.collection("users").doc(user.uid); // Go to the Firestore document of the user
+            currentUser.get().then(userDoc => {
+                // Get the user name
+                let userName = userDoc.data().name;
+                let userSet = userDoc.data().set;
+                console.log(userSet);
+                console.log(userName);
+
+                const span = document.createElement('span')
+                span.setAttribute('id', 'set')
+                let textNode = document.createTextNode(` set ${userSet}`)
+                span.appendChild(textNode)
+                console.log(span); // <span id="set"> set D</span>
+
+                document.getElementById("name-goes-here").innerHTML = userName
+                document.getElementById("set").innerHTML = `Set ${userSet}`
+            })
+        } else {
+            console.log("No user is logged in."); // Log a message when no user is logged in
+        }
+    })
+}
+
+insertNameFromFirestore();
+
+// Function to read the quote of the day from the Firestore "quotes" collection
+// Input param is the String representing the day of the week, aka, the document name
+// function readQuote(day) {
+//     db.collection("quotes").doc(day)
+//         .onSnapshot(dayDoc => {
+//             console.log("current document data: " + dayDoc.data());
+//             document.getElementById("quote-goes-here").innerHTML = dayDoc.data().quote;
+
+
+//         })
+
+// }
+
+// readQuote("wednesday");
+
+// const quotesCollection = db.collection("quotes");
+
+// // Get all documents in the "quotes" collection
+// quotesCollection.get()
+//   .then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       // doc.data() is the data of each document
+//       console.log(doc.id);
+//     });
+//   })
+//   .catch((error) => {
+//     console.error("Error getting documents: ", error);
+//   });
+
+
+
+

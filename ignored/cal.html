@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/cal.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Boostrap Library JS CDN  go here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light nav-background">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="./images/date-and-time.png" height="36">
+                Calendar </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">About us</a>
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <h1 class="display-4">Hi, <span id="name-goes-here"></span></h1>
+    <!-- <hr>
+    <span id="quote-goes-here"></span>
+    <button id="add-quote">Change quote</button> -->
+
+    <!-- <div id="input-container">
+        <div id="input">
+            <input type="text" name="quote" id="quote-input" placeholder="e.g. Hard work pays off">
+            <div id="open-close-btn">
+                <span id="add">&#x25CB;</span>
+                <span id="close">&times;</span>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="wrapper">
+        <header>
+            <p class="current-date">Sep 2022</p>
+            <div class="icons">
+                <span id="prev" class="material-symbols-rounded">&lt;</span>
+                <span id="next" class="material-symbols-rounded">&gt;</span>
+            </div>
+        </header>
+        <div class="calendar">
+            <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tues</li>
+                <li>Wed</li>
+                <li>Thur</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+            <ul class="days">
+            </ul>
+        </div>
+    </div>
+    <div class="container"> -->
+
+    <div class="calendar-container">
+        <div class="tableHead" id="th1"></div>
+        <div class="tableHead" id="th2">M</div>
+        <div class="tableHead" id="th3">T</div>
+        <div class="tableHead" id="th4">W</div>
+        <div class="tableHead" id="th5">Th</div>
+        <div class="tableHead" id="th6">F</div>
+        <div class="timeSlot" id="time830">830</div>
+        <div id="M830">830M</div>
+        <div id="T830">830T</div>
+        <div id="W830">830W</div>
+        <div id="Th830">830Th</div>
+        <div id="F830">830F</div>
+        <div class="timeSlot" id="time930">930</div>
+        <div id="M930">930M</div>
+        <div id="T930">930T</div>
+        <div id="W930">930W</div>
+        <div id="Th930">930Th</div>
+        <div id="F930">930F</div>
+        <div class="timeSlot" id="time1030">1030</div>
+        <div id="M1030">1030M</div>
+        <div id="T1030">1030T</div>
+        <div id="W1030">1030W</div>
+        <div id="Th1030">1030Th</div>
+        <div id="F1030">1030F</div>
+        <div class="timeSlot" id="time1130">1130</div>
+        <div id="M1130">1130M</div>
+        <div id="T1130">1130T</div>
+        <div id="W1130">1130W</div>
+        <div id="Th1130">1130Th</div>
+        <div id="F1130">1130F</div>
+        <div class="timeSlot" id="time1230">1230</div>
+        <div id="M1230">1230M</div>
+        <div id="T1230">1230T</div>
+        <div id="W1230">1230W</div>
+        <div id="Th1230">1230Th</div>
+        <div id="F1230">1230F</div>
+        <div class="timeSlot" id="time1330">130</div>
+        <div id="M1330">130M</div>
+        <div id="T1330">130T</div>
+        <div id="W1330">130W</div>
+        <div id="Th1330">130Th</div>
+        <div id="F1330">130F</div>
+        <div class="timeSlot" id="time1430">230</div>
+        <div id="M1430">230M</div>
+        <div id="T1430">230T</div>
+        <div id="W1430">230W</div>
+        <div id="Th1430">230Th</div>
+        <div id="F1430">230F</div>
+        <div class="timeSlot" id="time1530">330</div>
+        <div id="M1530">330M</div>
+        <div id="T1530">330T</div>
+        <div id="W1530">330W</div>
+        <div id="Th1530">330Th</div>
+        <div id="F1530">330F</div>
+        <div class="timeSlot" id="time1630">430</div>
+        <div id="M1630">430M</div>
+        <div id="T1630">430T</div>
+        <div id="W1630">430W</div>
+        <div id="Th1630">430Th</div>
+        <div id="F1630">430F</div>
+        <div class="timeSlot" id="time1730">530</div>
+        <div id="M1730">530M</div>
+        <div id="T1730">530T</div>
+        <div id="W1730">530W</div>
+        <div id="Th1730">530Th</div>
+        <div id="F1730">530F</div>
+        <div class="timeSlot" id="timeNight">Night</div>
+        <div id="nightM">NightM</div>
+        <div id="nightW">NightT</div>
+        <div id="nightT">NightW</div>
+        <div id="nightTh">NightTh</div>
+        <div id="nightF">NightF</div>
+    </div>
+
+
+    <!-- <p>Quote of the day: <span id="quote-goes-here"></span></p> -->
+
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Matrix</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+        <p class="text-center text-muted">2024 COMP 1800</p>
+    </footer>
+    </div>
+
+
+
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/firebaseAPI_BBY27.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <!-- <script src="./scripts/authentication.js"></script> -->
+    <script src="./scripts/main.js"></script>
+    <!-- <script src="./scripts/add_quote.js"></script> -->
+    <script src="./scripts/calendar.js"></script>
+    <!-- <script src="scripts/cal.js" defer></script> -->
+</body>
+
+</html>

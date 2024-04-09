@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 27 project</title>
+    <!-- <link rel="stylesheet" href="styles/cal.css"> -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/add_event.css">
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Boostrap Library JS CDN  go here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+</head>
+
+<body>
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <!-- the body of your page goes here -->
+
+    <div class="event-layout">
+        <h3 class="event-title">New event</h3>
+        <input class="form-control me-2 event-placeholder" type="Title" placeholder="Title" aria-label="Title"
+            id="titleInput1">
+        <div class="event-type">
+            <p>Type: </p>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Class</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Class</a>
+                    <!-- <a href="#">Assignment</a>
+                    <a href="#">Team work</a>
+                    <a href="#">Quiz</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- <input class="form-control me-2 event-placeholder" type="Location" placeholder="Location" aria-label="Location"
+            id="locationInput1">
+        <input class="form-control me-2 event-placeholder" type="Group" placeholder="Group" aria-label="Group"
+            id="groupInput1"> -->
+
+        <div class="alice-blue">
+            <div class="event-type">
+                <p>Starts:</p>
+                <input type="datetime-local" id="startTime" name="startTime" value="2024-04-11T09:30"
+                    min="2023-03-20T00:00" max="2025-03-20T00:00" />
+
+            </div>
+            <div class="event-type">
+                <p>Ends:</p>
+                <input type="datetime-local" id="endTime" name="endTime" value="2024-04-11T09:30" min="2023-03-20T00:00"
+                    max="2025-03-20T00:00" />
+            </div>
+        </div>
+
+        <form class="event-type event-repeat" name="repeatFrequency">
+            <label for="repeat">Repeat:</label>
+            <select name="repeat">
+                <option value="never">Never</option>
+                <option value="everyday">Everyday</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </form>
+
+        <input class="form-control me-2 event-placeholder" type="Import-code" placeholder="Import-code"
+            aria-label="Import-code">
+
+        <form class="d-flex">
+            <button class="btn btn-outline-success btn-add" type="button" onclick="saveNewEvent()">Add</button>
+            <button class="btn btn-outline-success btn-add" type="button" onclick="handleCancel()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- our own footer goes here-->
+    <!-- <nav id="footerPlaceholder"></nav> -->
+    </div>
+
+    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/firebaseAPI_BBY27.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/add_event.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+/* buttons */
+.btn-outline-success {
+    border-color: steelblue !important;
+    color: lightslategray !important;
+}
+
+.btn-outline-success:hover {
+    background-color: steelblue !important;
+    color: white !important;
+}
+
+.btn-log-in {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    text-decoration: none;
+    color: steelblue;
+    border: 1px solid;
+    border-radius: 9999px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.btn-create-account {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    color: white;
+    text-decoration: none;
+    background-color: steelblue;
+    border: 1px solid;
+    border-radius: 9999px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+}
+
+/* navbar */
+nav {
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-brand {
+    margin: 5px;
+}
+
+.nav-placeholder {
+    height: 76px;
+}
+
+.nav-background {
+    background-color: aliceblue;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+/*main page*/
+@media only screen and (max-width: 700px) {
+
+    .container-week,
+    .current-month-days {
+        max-width: 700px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 70px);
+    }
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+}
+
+/*main page*/
+.container-week,
+.current-month-days {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-week {
+    font-weight: bold;
+}
+
+.current-month {
+    max-width: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.days {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.days:hover span {
+    background: lightgrey;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+.select-day span {
+    color: white;
+    font-weight: bold;
+    background: steelblue;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+.previous-month-days {
+    color: lightgrey;
+}
+
+.header-nav-link {
+    padding: 10px !important;
+    color: steelblue;
+    text-decoration: none;
+}
+
+.flex-basis {
+    text-align: center;
+}
+
+.container-align-right .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.show {
+    display: block;
+}
+
+.alice-blue {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#add-quote {
+    padding: 5px;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+#add-quote:hover {
+    background-color: black;
+    color: white;
+}
+
+#input {
+    display: flex;
+    background-color: aliceblue;
+    padding: 10px;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    animation-name: animateinputcontainer;
+    animation-duration: .4s;
+    position: relative;
+    z-index: 2;
+}
+
+#add,
+#close {
+    cursor: pointer;
+}
+
+#add {
+    margin-right: 5px;
+}
+
+#input-container {
+    display: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    display: none;
+    z-index: 0;
+}
+
+#welcomeDiv {
+    height: calc(100% - 62px);
+    width: 100%;
+    padding: 10%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.firebaseui-container {
+    border-radius: 20px;
+}
