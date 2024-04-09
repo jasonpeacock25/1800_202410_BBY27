@@ -33,8 +33,7 @@ window.onclick = function (event) {
     }
 }
 
-
-
+// Save new event, as well as check if the event title is valid
 function saveNewEvent() {
     let user = firebase.auth().currentUser;
     if (user) {
@@ -66,7 +65,7 @@ function saveNewEvent() {
         const isPayloadValid = true;
         for (let i = 0; i < payloadKeys.length; i++) {
             if (!payload[payloadKeys[i]]) {
-                alert(payloadKeys[i] + " is not valid !");
+                alert(payloadKeys[i] + " is not valid !"); 
                 isPayloadValid = false;
                 break;
             }
@@ -88,6 +87,7 @@ function saveNewEvent() {
     }
 }
 
+// If user cancel to add new event, return to last page.
 function handleCancel() {
     history.back();
     console.log("Cancel Clicked");
