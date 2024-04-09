@@ -7,31 +7,75 @@ const classes = [];
 const times = [830, 930, 1030, 1130, 1230, 1330, 1430, 1530, 1630, "Night"];
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-function retrieveSchedule() {
-    fetch("./default-schedule.json").then(res => {
-        if (res.ok) {
-            return res.json()
-        } else {
-            console.log("404");
-        }
+// function retrieveSchedule() {
+//     fetch("./default-schedule.json").then(res => {
+//         if (res.ok) {
+//             return res.json()
+//         } else {
+//             console.log("404");
+//         }
 
-    }).then(data => {
-        //console.log(data);
-        data.forEach(each => { // monday tuesday .. 
-            //console.log(each);
-            Object.keys(each).forEach(key => {
-                //console.log(each[key]);
-                classes.push(each[key])
-            })
+//     }).then(data => {
+//         //console.log(data);
+//         data.forEach(each => { // monday tuesday .. 
+//             //console.log(each);
+//             Object.keys(each).forEach(key => {
+//                 //console.log(each[key]);
+//                 classes.push(each[key])
+//             })
 
-        })
-        //console.log(classes);
-        populateTime(times)
-        populateData()
+//         })
+//         console.log(classes);
+//         populateTime(times)
+//         populateData()
 
-    })
+//     })
+// }
+// retrieveSchedule()
+
+function retrieveScheduleFromFirebase() {
+    // Reference to the Firestore collection where your schedule data is stored
+    const scheduleRef = firebase.firestore().collection("schedules");
+
+    // Clear the classes array before adding new data
+    // classes = [];
+
+    // Create an array to store promises for each asynchronous get() call
+    const promises = [];
+
+    // Iterate over each day of the week (Monday to Friday)
+    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].forEach(day => {
+        // Get the schedule data for the current day from Firestore
+        const promise = scheduleRef.doc(day).get().then(doc => {
+            if (doc.exists) {
+                const schedule = doc.data();
+
+                // Iterate over each time slot in the schedule
+                Object.values(schedule).forEach(classInfo => {
+                    // Add the class information to the classes array
+                    classes.push(classInfo);
+                });
+            } else {
+                console.log(`No schedule data found for ${day}.`);
+            }
+        }).catch(error => {
+            console.error(`Error fetching schedule data for ${day}:`, error);
+        });
+
+        promises.push(promise);
+    });
+
+    // Use Promise.all() to execute code after all promises are resolved
+    Promise.all(promises).then(() => {
+        // Code here will be executed after all asynchronous operations are completed
+        // console.log("All schedule data retrieved:", classes);
+        populateTime(times);
+        populateData();
+    });
 }
-retrieveSchedule()
+
+retrieveScheduleFromFirebase();
+
 
 
 function populateTime(times) {
@@ -46,24 +90,25 @@ function populateTime(times) {
 
 
 
+
+
 function populateData() {
     // console.log(classes);
+    // console.log(classes[2]);
     let countBlocks = 0;
     let countEmptyBlocks = 0;
     for (let j = 0; j < classes.length; j++) {
         let div = document.createElement('div');
         div.classList.add('custom-table-cell');
         div.setAttribute('id', 'tableElement' + j);
-        div.setAttribute('data-index', j); // custom attribute 
+        div.setAttribute('data-index', j);
 
         let data = classes[j];
         // console.log(data);
-
         div.innerText = data; // if innerText value is null, nothing will appear 
         if (data) {
             div.classList.add('school');
-            //study hours set to 3, timeslots set to 9
-        } else if (countEmptyBlocks < studyHours && countBlocks != timeSlots) { 
+        } else if (countEmptyBlocks < studyHours && countBlocks != timeSlots) {
             countEmptyBlocks++;
             div.innerText = "Study Block " + countEmptyBlocks;
             div.classList.add('study');
@@ -85,7 +130,7 @@ function populateData() {
         } else {
             countBlocks++;
         }
-
+        // console.log(div);
         table.appendChild(div);
         document.querySelector('#tableElement' + j).addEventListener("click", displayClickMessage);
     }
@@ -95,7 +140,7 @@ function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
-    // console.log(studyClass);
+    console.log(studyClass);
     if (studyClass.includes('studyDone')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('study');
