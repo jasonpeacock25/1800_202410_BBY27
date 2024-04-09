@@ -1,7 +1,4 @@
-.nav-item {
-    display: flex;
-}
-
+/* buttons */
 .btn-outline-success {
     border-color: steelblue !important;
     color: lightslategray !important;
@@ -10,93 +7,6 @@
 .btn-outline-success:hover {
     background-color: steelblue !important;
     color: white !important;
-}
-
-.nav-background {
-    background-color: aliceblue;
-}
-
-.logo {
-    margin-right: 10px;
-}
-
-.icon {
-    width: 35px;
-    height: 35px;
-    margin-top: 5px;
-    margin-right: 15px;
-}
-
-.responsive {
-    width: 100%;
-    height: auto;
-}
-
-/*main page*/
-@media only screen and (max-width: 700px) {
-
-    .container-week,
-    .current-month-days {
-        max-width: 700px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 70px);
-
-    }
-}
-
-/*main page*/
-.container-week,
-.current-month-days {
-    max-width: 500px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 70px);
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.container-week {
-    font-weight: bold;
-}
-
-.current-month {
-    max-width: 500px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.days {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: black;
-    text-decoration: none;
-}
-
-.days:hover span {
-
-    background: lightgrey;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    line-height: 25px;
-}
-
-.select-day span {
-
-    color: white;
-    font-weight: bold;
-    background: steelblue;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    line-height: 25px;
-}
-
-.previous-month-days {
-    color: lightgrey;
 }
 
 .btn-log-in {
@@ -128,8 +38,119 @@
     justify-content: center;
 }
 
-.nav-link {
-    padding: 5px;
+/* navbar */
+nav {
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-brand {
+    margin: 5px;
+}
+
+.nav-placeholder {
+    height: 76px;
+}
+
+.nav-background {
+    background-color: aliceblue;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+/*main page*/
+@media only screen and (max-width: 700px) {
+
+    .container-week,
+    .current-month-days {
+        max-width: 700px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 70px);
+    }
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+}
+
+/*main page*/
+.container-week,
+.current-month-days {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-week {
+    font-weight: bold;
+}
+
+.current-month {
+    max-width: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.days {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.days:hover span {
+    background: lightgrey;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+.select-day span {
+    color: white;
+    font-weight: bold;
+    background: steelblue;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+}
+
+.previous-month-days {
+    color: lightgrey;
+}
+
+.header-nav-link {
+    padding: 10px !important;
+    color: steelblue;
+    text-decoration: none;
 }
 
 .flex-basis {
@@ -142,65 +163,8 @@
     flex-direction: row;
 }
 
-/*dropdown button*/
-.dropbtn {
-    background-color: steelblue;
-    color: white;
-    padding: 8px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: steelblue;
-}
-
-.dropdown {
-    float: right;
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 180px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    right: 0;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-    background-color: #ddd;
-}
-
 .show {
     display: block;
-}
-
-.event-type {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.event-type p {
-    margin-bottom: 0;
-}
-
-.form-group .event-placeholder {
-    margin: 10px 0;
 }
 
 .alice-blue {
@@ -210,28 +174,9 @@
     margin-top: 20px;
 }
 
-.event-title {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.event-repeat,
-.btn-logout {
-    margin: 20px 0;
-}
-
 .d-flex {
     display: flex;
     justify-content: space-evenly;
-}
-
-.btn-add {
-    width: 75px;
-    margin-top: 40px;
-}
-
-.event-layout {
-    width: 70%;
 }
 
 #add-quote {
@@ -285,55 +230,10 @@
     z-index: 0;
 }
 
-#profile {
-    width: 120px;
-    display: flex;
-    margin: 0 auto;
-}
-
-.btn-steel-blue {
-    background-color: steelblue !important;
-    color: white !important;
-}
-
-.study-goal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.study-hour {
-
-    width: 25%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    /* line-height: 1.5; */
-    /* color: var(--bs-body-color); */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.study-hours {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 #welcomeDiv {
     height: calc(100% - 62px);
     width: 100%;
     padding: 10%;
-}
-
-nav {
-    width: 100%;
 }
 
 body {
@@ -351,4 +251,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.firebaseui-container {
+    border-radius: 20px;
 }
