@@ -1,9 +1,10 @@
 
-
+// data for display report
 (async function () {
     const data = [3, 1, 4, 1, 2];
     const goal = 3
 
+// The bar chart
     new Chart(
         document.getElementById('report'),
         {
@@ -35,7 +36,6 @@
                         beginAtZero: true,
                     }
                 }
-
             }
         }
     );
