@@ -5,14 +5,6 @@ function myFunction(x) {
     document.getElementById("myDropdown" + x).classList.toggle("show");
 }
 
-// function selectType(event) {
-//     console.log(event);
-//     let dropdown1 = document.querySelector("#myDropdown1");
-//     console.log(event.target.innerHTML, dropdown1);
-//     console.log(dropdown1.innerHTML);
-//     dropdown1.innerHTML = event.target.innerHTML;
-// }
-
 function selectType1(event) {
     console.log(event);
     var dropdowns = document.querySelector("#dropbtn1");
@@ -57,89 +49,6 @@ window.onclick = function (event) {
         }
     }
 }
-
-/*
-// Save new event, as well as check if the event title is valid
-function saveNewEvent() {
-    let user = firebase.auth().currentUser;
-    let tempSchedule = [];
-    let startIndex;
-    let duration;
-    let schedule = [];
-    if (user) {
-        const currentUser = db.collection("users").doc(user.uid);
-
-        console.log("inside saveNewEvent");
-        let eventTitle = document.getElementById("titleInput1").value;
-        let eventDay = document.getElementById("dropbtn1").innerHTML;
-        let eventStart = document.getElementById("dropbtn2").innerHTML;
-        let eventDuration = document.getElementById("dropbtn3").innerHTML;
-
-        // GET CURRENT ARRAYS FROM DATABASE
-        const promise = currentUser.get().then(userDoc => {
-            switch (eventDay) {
-                case "Monday":
-                    tempSchedule = userDoc.data().active_monday;
-                    break;
-                case "Tuesday":
-                    tempSchedule = userDoc.data().active_tuesday;
-                    break;
-                case "Wednesday":
-                    tempSchedule = userDoc.data().active_wednesday;
-                    break;
-                case "Thursday":
-                    tempSchedule = userDoc.data().active_thursday;
-                    break;
-                case "Friday":
-                    tempSchedule = userDoc.data().active_friday;
-                    break;
-                default: console.log("Default case");
-                    break;
-            }
-
-
-            console.log(tempSchedule)
-            // Iterate over each time slot in the schedule
-            Object.values(tempSchedule).forEach(arrayElement => {
-                // Add the class information to the classes array
-                schedule.push(arrayElement);
-            })
-            console.log(schedule);
-        })
-
-        // for (let x = startIndex; (x < schedule.length && x - startIndex < duration); x++) {
-        //     schedule[x] = eventTitle;
-        // }
-
-        // ADD NEW ELEMENT TO CURRENT ARRAY
-
-        // UPDATE DATABASE WITH REVISED ARRAY
-
-        //c) update user's document in Firestore
-        switch (eventDay) {
-            case "Monday":
-                currentUser.update({ active_monday: schedule }).then(() => { console.log("Document successfully updated!"); })
-                break;
-            case "Tuesday":
-                currentUser.update({ active_tuesday: schedule }).then(() => { console.log("Document successfully updated!"); })
-                break;
-            case "Wednesday":
-                currentUser.update({ active_wednesday: schedule }).then(() => { console.log("Document successfully updated!"); })
-                break;
-            case "Thursday":
-                currentUser.update({ active_thursday: schedule }).then(() => { console.log("Document successfully updated!"); })
-                break;
-            case "Friday":
-                currentUser.update({ active_friday: schedule }).then(() => { console.log("Document successfully updated!"); })
-                break;
-            default: console.log("Default case");
-                break;
-        }
-        console.log("LAST STEP");
-    } else {
-        console.log("No user is signed in!!!");
-    }
-} */
 
 function saveNewEvent() {
     const promises = [];

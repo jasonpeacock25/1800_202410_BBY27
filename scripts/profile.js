@@ -60,6 +60,10 @@ function saveUserInfo() {
     userSet = document.getElementById('setInput').value;
     userStudyHour = document.getElementById('studyHourInput').value;
 
+    if (userStudyHour > 24 || userStudyHour < 0) {
+        userStudyHour = 0;
+    }
+
 
 
 
@@ -68,7 +72,7 @@ function saveUserInfo() {
     setCollection = db.collection("sets").doc(userSet);
 
     setCollection.get().then(setDoc => {
-        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet =="C" || userSet == "D")) {
+        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet =="C" || userSet == "D" || userSet == "CLEAR")) {
             console.log(existingSet);
             currentUser.update({
                 active_monday: setDoc.data().default_monday,
@@ -76,6 +80,11 @@ function saveUserInfo() {
                 active_wednesday: setDoc.data().default_wednesday,
                 active_thursday: setDoc.data().default_thursday,
                 active_friday: setDoc.data().default_friday,
+                default_monday: setDoc.data().default_monday,
+                default_tuesday: setDoc.data().default_tuesday,
+                default_wednesday: setDoc.data().default_wednesday,
+                default_thursday: setDoc.data().default_thursday,
+                default_friday: setDoc.data().default_friday,
                 set: userSet
             })
         } else {
