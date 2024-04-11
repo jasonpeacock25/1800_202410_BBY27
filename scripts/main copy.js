@@ -49,7 +49,6 @@ function tempArrayMaker(){
 
 const scheduleRef = firebase.firestore().collection("schedules");
 
-/*
 // Iterate through the array of schedules and add each schedule data to Firestore
 schedules.forEach((schedule, index) => {
     // Specify the document ID as the day of the week (e.g., "Monday", "Tuesday", etc.)
@@ -64,7 +63,6 @@ schedules.forEach((schedule, index) => {
             // console.error(`Error adding schedule data for ${dayOfWeek}: `, error);
         });
 });
-*/
 
 
 

@@ -1,4 +1,8 @@
- 
+var userName;
+var userSchool;
+var userMajor;
+var userSet;
+var userStudyHour;
 var currentUser;               //points to the document of the user who is logged in
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
@@ -11,11 +15,11 @@ function populateUserInfo() {
             currentUser.get()
                 .then(userDoc => {
                     //get the data fields of the user
-                    let userName = userDoc.data().name;
-                    let userSchool = userDoc.data().school;
-                    let userMajor = userDoc.data().major;
-                    let userSet = userDoc.data().set;
-                    let userStudyHour = userDoc.data().studyHour;
+                    userName = userDoc.data().name;
+                    userSchool = userDoc.data().school;
+                    userMajor = userDoc.data().major;
+                    userSet = userDoc.data().set;
+                    userStudyHour = userDoc.data().studyHour;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -40,8 +44,6 @@ function populateUserInfo() {
         }
     });
 }
-
-//call the function to run it 
 populateUserInfo();
 
 function editUserInfo() {
@@ -50,25 +52,45 @@ function editUserInfo() {
 }
 
 function saveUserInfo() {
-    //enter code here
-
     //a) get user entered values
     userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
     userSchool = document.getElementById('schoolInput').value;     //get the value of the field with id="schoolInput"
     userMajor = document.getElementById('majorInput').value;       //get the value of the field with id="cityInput"
     userSet = document.getElementById('setInput').value;
     userStudyHour = document.getElementById('studyHourInput').value;
-    //b) update user's document in Firestore
+
+
+
+
+    //b) update user's default schedule in Firestore if set was changed
+
+    setCollection = db.collection("sets").doc("D");
+
+    setCollection.get().then(setDoc => {
+        let existingSetValue = userSet;
+        if (true) {
+            console.log(existingSetValue);
+            currentUser.update({
+                active_monday: setDoc.data().default_monday,
+                active_tuesday: setDoc.data().default_tuesday,
+                active_wednesday: setDoc.data().default_wednesday,
+                active_thursday: setDoc.data().default_thursday,
+                active_friday: setDoc.data().default_friday
+            })
+        }
+    })
+
+    //c) update user's document in Firestore
     currentUser.update({
         name: userName,
         school: userSchool,
         major: userMajor,
         set: userSet,
         studyHour: userStudyHour
+    }).then(() => {
+        console.log("Document successfully updated!");
     })
-        .then(() => {
-            console.log("Document successfully updated!");
-        })
-    //c) disable edit 
+
+    //d) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
 }
