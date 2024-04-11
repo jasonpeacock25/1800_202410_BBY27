@@ -64,7 +64,7 @@ function saveUserInfo() {
 
     //b) update user's default schedule in Firestore if set was changed
 
-    setCollection = db.collection("sets").doc("A");
+    setCollection = db.collection("sets").doc(userSet);
 
     setCollection.get().then(setDoc => {
         let existingSetValue = userSet;
