@@ -116,9 +116,13 @@ function saveStudyGoal() {
             console.error("Error saving study goal input: ", error);
         });
 }
-
+const myModal = bootstrap.Modal.getOrCreateInstance('#exampleModal')
 document.querySelector('.btn-steel-blue').addEventListener('click', () => {
+    myModal.show()
     saveStudyGoal()
+    setTimeout(() => {
+        window.location.href = 'main.html'; // Load main page
+    }, 2000);
 })
 
 // function setPlaceholderFromFirestore() {
