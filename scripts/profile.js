@@ -129,10 +129,12 @@ const myModal = bootstrap.Modal.getOrCreateInstance('#exampleModal')
 document.querySelector('.btn-steel-blue').addEventListener('click', () => {
     myModal.show()
     saveStudyGoal()
-    setTimeout(() => {
-        window.location.href = 'main.html'; // Load main page
-    }, 2000);
+
 })
+
+document.querySelector('#modal-close').addEventListener('click', ()=> {
+    window.location.href = 'main.html';
+}) 
 
 // function setPlaceholderFromFirestore() {
 //     const uid = firebase.auth().currentUser.uid;

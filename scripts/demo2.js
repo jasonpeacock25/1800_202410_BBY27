@@ -77,7 +77,7 @@ function populateTime(times) {
 
 function populateData() {
     let today = returnToday()
-    console.log(today);
+    // console.log(today);
     let startIndex
     let endIndex
     switch (today) {
@@ -107,8 +107,8 @@ function populateData() {
 
     }
 
-    console.log(startIndex);
-    console.log(endIndex);
+    // console.log(startIndex);
+    // console.log(endIndex);
 
     // console.log(classes[2]);
     let countBlocks = 0;
@@ -171,7 +171,7 @@ function displayClickMessage(event) {
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
     //console.log(studyClass);
-    console.log(index);
+    // console.log(index);
     if (studyClass.includes('studyDone')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('today-study');
@@ -204,3 +204,10 @@ function returnToday() {
     return sevenDays[date.getDay()]
 }
 
+const doneToday = document.querySelector('#done-today');
+function done() {
+    doneToday.addEventListener('click', () => {
+        
+    })
+}
+done()
