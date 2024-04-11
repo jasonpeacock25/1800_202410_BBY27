@@ -169,7 +169,8 @@ function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
-    // console.log(studyClass);
+    //console.log(studyClass);
+    console.log(index);
     if (studyClass.includes('studyDone')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('today-study');

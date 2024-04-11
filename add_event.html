@@ -42,14 +42,46 @@
         <input class="form-control me-2 event-placeholder" type="Title" placeholder="Title" aria-label="Title"
             id="titleInput1">
         <div class="event-type">
-            <p>Type: </p>
+            <p>Day: </p>
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Class</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Class</a>
-                    <!-- <a href="#">Assignment</a>
-                    <a href="#">Team work</a>
-                    <a href="#">Quiz</a> -->
+                <button id="dropbtn1" onclick="myFunction(1)" class="dropbtn">Monday</button>
+                <div id="myDropdown1" class="dropdown-content">
+                    <a href="#">Monday</a>
+                    <a href="#">Tuesday</a>
+                    <a href="#">Wednesday</a>
+                    <a href="#">Thursday</a>
+                    <a href="#">Friday</a>
+                </div>
+            </div>
+        </div>
+        <div class="event-type">
+            <p>Start Time: </p>
+            <div class="dropdown">
+                <button id="dropbtn2" onclick="myFunction(2)" class="dropbtn">8:30</button>
+                <div id="myDropdown2" class="dropdown-content">
+                    <a href="#">8:30</a>
+                    <a href="#">9:30</a>
+                    <a href="#">10:30</a>
+                    <a href="#">11:30</a>
+                    <a href="#">12:30</a>
+                    <a href="#">13:30</a>
+                    <a href="#">13:30</a>
+                    <a href="#">15:30</a>
+                    <a href="#">16:30</a>
+                </div>
+            </div>
+        </div>
+        <div class="event-type">
+            <p>Duration: </p>
+            <div class="dropdown">
+                <button id="dropbtn3" onclick="myFunction(3)" class="dropbtn">1 Hour</button>
+                <div id="myDropdown3" class="dropdown-content">
+                    <a href="#">1 Hour</a>
+                    <a href="#">2 Hours</a>
+                    <a href="#">3 Hours</a>
+                    <a href="#">4 Hours</a>
+                    <a href="#">5 Hours</a>
+                    <a href="#">6 Hours</a>
                 </div>
             </div>
         </div>
@@ -58,7 +90,7 @@
         <input class="form-control me-2 event-placeholder" type="Group" placeholder="Group" aria-label="Group"
             id="groupInput1"> -->
 
-        <div class="alice-blue">
+        <!-- <div class="alice-blue">
             <div class="event-type">
                 <p>Starts:</p>
                 <input type="datetime-local" id="startTime" name="startTime" value="2024-04-11T09:30"
@@ -70,9 +102,9 @@
                 <input type="datetime-local" id="endTime" name="endTime" value="2024-04-11T09:30" min="2023-03-20T00:00"
                     max="2025-03-20T00:00" />
             </div>
-        </div>
+        </div> -->
 
-        <form class="event-type event-repeat" name="repeatFrequency">
+        <!-- <form class="event-type event-repeat" name="repeatFrequency">
             <label for="repeat">Repeat:</label>
             <select name="repeat">
                 <option value="never">Never</option>
@@ -80,10 +112,10 @@
                 <option value="weekly">Weekly</option>
                 <option value="monthly">Monthly</option>
             </select>
-        </form>
+        </form> -->
 
-        <input class="form-control me-2 event-placeholder" type="Import-code" placeholder="Import-code"
-            aria-label="Import-code">
+        <!-- <input class="form-control me-2 event-placeholder" type="Import-code" placeholder="Import-code"
+            aria-label="Import-code"> -->
 
         <form class="d-flex">
             <button class="btn btn-outline-success btn-add" type="button" onclick="saveNewEvent()">Add</button>
