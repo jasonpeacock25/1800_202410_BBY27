@@ -1,7 +1,7 @@
 const table = document.querySelector('#time-table');
 const daysCol = document.querySelector('#days');
 const timeSlots = 9;
-const studyHours = 3;
+let studyHours = 3;
 const classes = [];
 
 const times = [830, 930, 1030, 1130, 1230, 1330, 1430, 1530, 1630, "Night"];
@@ -23,6 +23,7 @@ function retrieveScheduleFromFirebase() {
                 //console.log(varDays[x]);
                 // Get the schedule data for the current day from Firestore
                 const promise = currentUser.get().then(userDoc => {
+                    studyHours = userDoc.data().studyHour;
                     let schedule;
                     if (userDoc.exists) {
                         switch (x) {

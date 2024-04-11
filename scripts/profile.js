@@ -1,7 +1,7 @@
 var userName;
 var userSchool;
 var userMajor;
-var userSet;
+var existingSet;
 var userStudyHour;
 var currentUser;               //points to the document of the user who is logged in
 function populateUserInfo() {
@@ -20,6 +20,7 @@ function populateUserInfo() {
                     userMajor = userDoc.data().major;
                     userSet = userDoc.data().set;
                     userStudyHour = userDoc.data().studyHour;
+                    existingSet = userSet;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -67,16 +68,18 @@ function saveUserInfo() {
     setCollection = db.collection("sets").doc(userSet);
 
     setCollection.get().then(setDoc => {
-        let existingSetValue = userSet;
-        if (true) {
-            console.log(existingSetValue);
+        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet =="C" || userSet == "D")) {
+            console.log(existingSet);
             currentUser.update({
                 active_monday: setDoc.data().default_monday,
                 active_tuesday: setDoc.data().default_tuesday,
                 active_wednesday: setDoc.data().default_wednesday,
                 active_thursday: setDoc.data().default_thursday,
-                active_friday: setDoc.data().default_friday
+                active_friday: setDoc.data().default_friday,
+                set: userSet
             })
+        } else {
+            console.log("New set is either the same as existing set or invalid.");
         }
     })
 
@@ -85,7 +88,6 @@ function saveUserInfo() {
         name: userName,
         school: userSchool,
         major: userMajor,
-        set: userSet,
         studyHour: userStudyHour
     }).then(() => {
         console.log("Document successfully updated!");
@@ -104,8 +106,8 @@ function saveStudyGoal() {
     const studyHourInput = document.getElementById("studyHourInput").value;
 
     // Save input value to Firestore
-    firebase.firestore().collection("users").doc(uid).set({
-        studygoal: studyHourInput
+    firebase.firestore().collection("users").doc(uid).update({
+        studyHour: studyHourInput
     })
         .then(() => {
             console.log("Study goal input saved successfully!");

@@ -58,9 +58,14 @@ window.onclick = function (event) {
     }
 }
 
+/*
 // Save new event, as well as check if the event title is valid
 function saveNewEvent() {
     let user = firebase.auth().currentUser;
+    let tempSchedule = [];
+    let startIndex;
+    let duration;
+    let schedule = [];
     if (user) {
         const currentUser = db.collection("users").doc(user.uid);
 
@@ -71,70 +76,250 @@ function saveNewEvent() {
         let eventDuration = document.getElementById("dropbtn3").innerHTML;
 
         // GET CURRENT ARRAYS FROM DATABASE
-        currentUser.get().then(userDoc => {
-            currentMonday = userDoc.data().active_monday;
-            currentTuesday = userDoc.data().active_tuesday;
-            currentWednesday = userDoc.data().active_wednesday;
-            currentThursday = userDoc.data().active_thursday;
-            currentFriday = userDoc.data().active_friday;
+        const promise = currentUser.get().then(userDoc => {
+            switch (eventDay) {
+                case "Monday":
+                    tempSchedule = userDoc.data().active_monday;
+                    break;
+                case "Tuesday":
+                    tempSchedule = userDoc.data().active_tuesday;
+                    break;
+                case "Wednesday":
+                    tempSchedule = userDoc.data().active_wednesday;
+                    break;
+                case "Thursday":
+                    tempSchedule = userDoc.data().active_thursday;
+                    break;
+                case "Friday":
+                    tempSchedule = userDoc.data().active_friday;
+                    break;
+                default: console.log("Default case");
+                    break;
+            }
+
+
+            console.log(tempSchedule)
+            // Iterate over each time slot in the schedule
+            Object.values(tempSchedule).forEach(arrayElement => {
+                // Add the class information to the classes array
+                schedule.push(arrayElement);
+            })
+            console.log(schedule);
         })
 
-
-        schedule = userDoc.data().active_monday;
-
-        // Iterate over each time slot in the schedule
-        Object.values(schedule).forEach(classInfo => {
-            // Add the class information to the classes array
-            classes.push(classInfo);
-        }
+        // for (let x = startIndex; (x < schedule.length && x - startIndex < duration); x++) {
+        //     schedule[x] = eventTitle;
+        // }
 
         // ADD NEW ELEMENT TO CURRENT ARRAY
 
         // UPDATE DATABASE WITH REVISED ARRAY
 
         //c) update user's document in Firestore
-        currentUser.update({
-            active_monday: ["", "", "", "", "BOOLIN", "", "", "", ""]
-        }).then(() => {
-            console.log("Document successfully updated!");
-        })
-
-        /*
-        const payload = {
-            title: eventTitle,
-            type: eventType,
-            starts: eventStart,
-            ends: eventEnd,
-            repeat: eventRepeat,
-            inputTime: firebase.firestore.FieldValue.serverTimestamp(),
-        }
-
-        const payloadKeys = Object.keys(payload);
-        const isPayloadValid = true;
-        for (let i = 0; i < payloadKeys.length; i++) {
-            if (!payload[payloadKeys[i]]) {
-                alert(payloadKeys[i] + " is not valid !"); 
-                isPayloadValid = false;
+        switch (eventDay) {
+            case "Monday":
+                currentUser.update({ active_monday: schedule }).then(() => { console.log("Document successfully updated!"); })
                 break;
-            }
+            case "Tuesday":
+                currentUser.update({ active_tuesday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                break;
+            case "Wednesday":
+                currentUser.update({ active_wednesday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                break;
+            case "Thursday":
+                currentUser.update({ active_thursday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                break;
+            case "Friday":
+                currentUser.update({ active_friday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                break;
+            default: console.log("Default case");
+                break;
         }
-
-        if (!isPayloadValid) return;
-
-        eventsRef.add(payload).then(function () {
-
-            history.pushState({}, "", window.location.origin + "/main.html");
-            history.go();
-
-            console.log("New Event Added");
-        }).catch(function (error) {
-            console.log("Error adding new event: " + error);
-        });
-        */
+        console.log("LAST STEP");
     } else {
         console.log("No user is signed in!!!");
     }
+} */
+
+function saveNewEvent() {
+    const promises = [];
+    let startIndex;
+    let duration;
+    let schedule = [];
+    let tempSchedule = [];
+    console.log("inside saveNewEvent");
+    let eventTitle = document.getElementById("titleInput1").value;
+    let eventDay = document.getElementById("dropbtn1").innerHTML;
+    let eventStart = document.getElementById("dropbtn2").innerHTML;
+    let eventDuration = document.getElementById("dropbtn3").innerHTML;
+
+    //GET START INDEX OF DAY
+    switch (eventStart) {
+        case "8:30":
+            startIndex = 0;
+            console.log("8:30");
+            break;
+        case "9:30":
+            startIndex = 1;
+            console.log("9:30");
+            break;
+        case "10:30":
+            startIndex = 2;
+            console.log("10:30");
+            break;
+        case "11:30":
+            startIndex = 3;
+            console.log("11:30");
+            break;
+        case "12:30":
+            startIndex = 4;
+            console.log("12:30");
+            break;
+        case "13:30":
+            startIndex = 5;
+            console.log("13:30");
+            break;
+        case "14:30":
+            startIndex = 6;
+            console.log("14:30");
+            break;
+        case "15:30":
+            startIndex = 7;
+            console.log("15:30");
+            break;
+        case "16:30":
+            startIndex = 8;
+            console.log("16:30");
+            break;
+        default:
+            startIndex = 0;
+            console.log("Default case");
+            break;
+    }
+
+    //GET DURATION
+    switch (eventDuration) {
+        case "1 Hour":
+            duration = 1;
+            console.log("1 Hour");
+            break;
+        case "2 Hours":
+            duration = 2;
+            console.log("2 Hours");
+            break;
+        case "3 Hours":
+            duration = 3;
+            console.log("3 Hours");
+            break;
+        case "4 Hours":
+            duration = 4;
+            console.log("4 Hours");
+            break;
+        case "5 Hours":
+            duration = 5;
+            console.log("5 Hours");
+            break;
+        case "6 Hours":
+            duration = 6;
+            console.log("6 Hours");
+            break;
+        default: console.log("Default case");
+            break;
+    }
+
+    firebase.auth().onAuthStateChanged(user => {
+        // Create an array to store promises for each asynchronous get() call
+        if (user) {
+            //reference to users document in firestore
+            const currentUser = db.collection("users").doc(user.uid);
+            // Get the schedule data for the current day from Firestore
+            const promise = currentUser.get().then(userDoc => {
+                if (userDoc.exists) {
+                    switch (eventDay) {
+                        case "Monday": tempSchedule = userDoc.data().active_monday;
+                            break;
+                        case "Tuesday": tempSchedule = userDoc.data().active_tuesday;
+                            break;
+                        case "Wednesday": tempSchedule = userDoc.data().active_wednesday;
+                            break;
+                        case "Thursday": tempSchedule = userDoc.data().active_thursday;
+                            break;
+                        case "Friday": tempSchedule = userDoc.data().active_friday;
+                            break;
+                        default: tempSchedule = ["", "", "", "", "", "", "", "", "", ""];
+                            break;
+                    }
+
+                    // Iterate over each time slot in the schedule
+                    Object.values(tempSchedule).forEach(arrayElement => {
+                        // Add the class information to the classes array
+                        schedule.push(arrayElement);
+                    });
+                } else {
+                    console.log("No schedule data found.");
+                }
+            }).catch(error => {
+                console.error("Error fetching schedule data:", error);
+            });
+            promises.push(promise);
+        };
+
+        // Use Promise.all() to execute code after all promises are resolved
+        Promise.all(promises).then(() => {
+            // Code here will be executed after all asynchronous operations are completed
+            console.log("Loaded Schedule: " + schedule);
+
+            for (let x = startIndex; (x < schedule.length - 1 && x - startIndex < duration); x++) {
+                schedule[x] = eventTitle;
+            }
+
+            const currentUser = db.collection("users").doc(user.uid);
+
+            console.log("Modified Schedule: " + schedule);
+            switch (eventDay) {
+                case "Monday":
+                    currentUser.update({ active_monday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                    break;
+                case "Tuesday":
+                    currentUser.update({ active_tuesday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                    break;
+                case "Wednesday":
+                    currentUser.update({ active_wednesday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                    break;
+                case "Thursday":
+                    currentUser.update({ active_thursday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                    break;
+                case "Friday":
+                    currentUser.update({ active_friday: schedule }).then(() => { console.log("Document successfully updated!"); })
+                    break;
+                default: console.log("Default case");
+                    break;
+            }
+
+            console.log("Uploaded");
+        });
+    })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // If user cancel to add new event, return to last page.
 function handleCancel() {
