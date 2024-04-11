@@ -7,31 +7,6 @@ const classes = [];
 const times = [830, 930, 1030, 1130, 1230, 1330, 1430, 1530, 1630, "Night"];
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-// function retrieveSchedule() {
-//     fetch("./default-schedule.json").then(res => {
-//         if (res.ok) {
-//             return res.json()
-//         } else {
-//             console.log("404");
-//         }
-
-//     }).then(data => {
-//         //console.log(data);
-//         data.forEach(each => { // monday tuesday .. 
-//             //console.log(each);
-//             Object.keys(each).forEach(key => {
-//                 //console.log(each[key]);
-//                 classes.push(each[key])
-//             })
-
-//         })
-//         console.log(classes);
-//         populateTime(times)
-//         populateData()
-
-//     })
-// }
-// retrieveSchedule()
 
 function retrieveScheduleFromFirebase() {
     // Reference to the Firestore collection where your schedule data is stored
@@ -140,18 +115,18 @@ function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
-    console.log(studyClass);
+    // console.log(studyClass);
     if (studyClass.includes('studyDone')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('study');
-        console.log("Changed from studyDone");
+        // console.log("Changed from studyDone");
     } else if (studyClass.includes('study')) {
         event.target.classList.remove('study');
         event.target.classList.add('studyDone');
-        console.log("Changed from studyDone");
+        // console.log("Changed from studyDone");
     }
-    console.log('#tableElement' + index);
-    console.log(content);
+    // console.log('#tableElement' + index);
+    // console.log(content);
 }
 
 
