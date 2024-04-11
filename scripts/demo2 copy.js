@@ -6,70 +6,91 @@ const classes = [];
 
 const times = [830, 930, 1030, 1130, 1230, 1330, 1430, 1530, 1630, "Night"];
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-const varDays = ["active_monday", "active_tuesday", "active_wednesday", "active_thursday", "active_friday"];
+
+// function retrieveSchedule() {
+//     fetch("./default-schedule.json").then(res => {
+//         if (res.ok) {
+//             return res.json()
+//         } else {
+//             console.log("404");
+//         }
+
+//     }).then(data => {
+//         //console.log(data);
+//         data.forEach(each => { // monday tuesday .. 
+//             //console.log(each);
+//             Object.keys(each).forEach(key => {
+//                 //console.log(each[key]);
+//                 classes.push(each[key])
+//             })
+
+//         })
+//         console.log(classes);
+//         populateTime(times)
+//         populateData()
+
+//     })
+// }
+// retrieveSchedule()
 
 function retrieveScheduleFromFirebase() {
-    firebase.auth().onAuthStateChanged(user => {
-        // Create an array to store promises for each asynchronous get() call
-        const promises = [];
-        if (user) {
-            //reference to users document in firestore
-            const currentUser = db.collection("users").doc(user.uid);
-            // Iterate over each day of the week (Monday to Friday)
-            for (let x = 0; x <days.length; x++) {
-                //console.log(varDays[x]);
-                // Get the schedule data for the current day from Firestore
-                const promise = currentUser.get().then(userDoc => {
-                    let schedule;
-                    if (userDoc.exists) {
-                        switch (x){
-                            case 0: schedule = userDoc.data().active_monday;
-                            break;
-                            case 1: schedule = userDoc.data().active_tuesday;
-                            break;
-                            case 2: schedule = userDoc.data().active_wednesday;
-                            break;
-                            case 3: schedule = userDoc.data().active_thursday;
-                            break;
-                            case 4: schedule = userDoc.data().active_friday;
-                            break;
-                        }
+    // Reference to the Firestore collection where your schedule data is stored
+    const scheduleRef = firebase.firestore().collection("schedules");
 
-                        // Iterate over each time slot in the schedule
-                        Object.values(schedule).forEach(classInfo => {
-                            // Add the class information to the classes array
-                            classes.push(classInfo);
-                        });
-                    } else {
-                        console.log("No schedule data found.");
-                    }
-                }).catch(error => {
-                    console.error("Error fetching schedule data:", error);
+    // Clear the classes array before adding new data
+    // classes = [];
+
+    // Create an array to store promises for each asynchronous get() call
+    const promises = [];
+
+    // Iterate over each day of the week (Monday to Friday)
+    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].forEach(day => {
+        // Get the schedule data for the current day from Firestore
+        const promise = scheduleRef.doc(day).get().then(doc => {
+            if (doc.exists) {
+                const schedule = doc.data();
+
+                // Iterate over each time slot in the schedule
+                Object.values(schedule).forEach(classInfo => {
+                    // Add the class information to the classes array
+                    classes.push(classInfo);
                 });
-                promises.push(promise);
+            } else {
+                console.log(`No schedule data found for ${day}.`);
             }
-        };
-
-        // Use Promise.all() to execute code after all promises are resolved
-        Promise.all(promises).then(() => {
-            // Code here will be executed after all asynchronous operations are completed
-            // console.log("All schedule data retrieved:", classes);
-            populateTime(times);
-            populateData();
-            //console.log(classes);
+        }).catch(error => {
+            console.error(`Error fetching schedule data for ${day}:`, error);
         });
-    })
+
+        promises.push(promise);
+    });
+
+    // Use Promise.all() to execute code after all promises are resolved
+    Promise.all(promises).then(() => {
+        // Code here will be executed after all asynchronous operations are completed
+        // console.log("All schedule data retrieved:", classes);
+        populateTime(times);
+        populateData();
+    });
 }
+
 retrieveScheduleFromFirebase();
+
+
 
 function populateTime(times) {
     let div = `<div class="custom-table-cell"></div>` // empty slot
+
 
     for (let i = 0; i < times.length; i++) {
         div += `<div class="custom-table-cell times">${times[i]}</div>`
     }
     table.innerHTML += div
 }
+
+
+
+
 
 function populateData() {
     // console.log(classes);
