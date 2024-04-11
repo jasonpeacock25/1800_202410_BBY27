@@ -18,19 +18,22 @@ var uiConfig = {
       var user = authResult.user;                            // get the user object from the Firebase authentication database
       if (authResult.additionalUserInfo.isNewUser) {         //if new user
         db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
-          name: user.displayName,                    //"users" collection
-
-          email: user.email,                         //with authenticated user's ID (user.uid)
-          country: "Canada",                      //optional default profile info      
-          school: "BCIT",
-          set: "D"  ,                        //optional default profile info
- 
+          name: user.displayName,                    //"users" collection 
           email: user.email,    //with authenticated user's ID (user.uid)
           school: "BCIT",
           major: "CST",
           set: "D",
-          studyHour: 3
-
+          studyHour: 3,
+          default_monday: ["", "", "COMP1712", "COMP1712", "", "COMP1510 LAB", "COMP1510 LAB", "COMP1510", "", ""],
+          default_tuesday: ["COMP1800", "COMP1800", "COMP1712 LAB", "COMP1712 LAB", "", "COMP1113 LAB", "COMP1113 LAB", "COMP1116", "COMP1116", ""],
+          default_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
+          default_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
+          default_friday: ["", "", "COMM1116", "COMM1116", "", "COMP1113", "COMP1113", "", "", ""],
+          active_monday: ["", "", "COMP1712", "COMP1712", "", "COMP1510 LAB", "COMP1510 LAB", "COMP1510", "", ""],
+          active_tuesday: ["COMP1800", "COMP1800", "COMP1712 LAB", "COMP1712 LAB", "", "COMP1113 LAB", "COMP1113 LAB", "COMP1116", "COMP1116", ""],
+          active_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
+          active_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
+          active_friday: ["", "", "COMM1116", "COMM1116", "", "COMP1113", "COMP1113", "", "", ""]
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("main.html");       //re-direct to main.html after signup
