@@ -60,6 +60,10 @@ function saveUserInfo() {
     userSet = document.getElementById('setInput').value;
     userStudyHour = document.getElementById('studyHourInput').value;
 
+    if (userStudyHour > 24 || userStudyHour < 0) {
+        userStudyHour = 0;
+    }
+
 
 
 
@@ -68,7 +72,7 @@ function saveUserInfo() {
     setCollection = db.collection("sets").doc(userSet);
 
     setCollection.get().then(setDoc => {
-        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet =="C" || userSet == "D")) {
+        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet =="C" || userSet == "D" || userSet == "CLEAR")) {
             console.log(existingSet);
             currentUser.update({
                 active_monday: setDoc.data().default_monday,
@@ -76,6 +80,11 @@ function saveUserInfo() {
                 active_wednesday: setDoc.data().default_wednesday,
                 active_thursday: setDoc.data().default_thursday,
                 active_friday: setDoc.data().default_friday,
+                default_monday: setDoc.data().default_monday,
+                default_tuesday: setDoc.data().default_tuesday,
+                default_wednesday: setDoc.data().default_wednesday,
+                default_thursday: setDoc.data().default_thursday,
+                default_friday: setDoc.data().default_friday,
                 set: userSet
             })
         } else {
@@ -96,47 +105,3 @@ function saveUserInfo() {
     //d) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
 }
-
-
-
-// Function to save study goal input to Firestore
-function saveStudyGoal() {
-    const uid = firebase.auth().currentUser.uid;
-    console.log("uid is" + uid);
-    const studyHourInput = document.getElementById("studyHourInput").value;
-
-    // Save input value to Firestore
-    firebase.firestore().collection("users").doc(uid).update({
-        studyHour: studyHourInput
-    })
-        .then(() => {
-            console.log("Study goal input saved successfully!");
-        })
-        .catch((error) => {
-            console.error("Error saving study goal input: ", error);
-        });
-}
-
-document.querySelector('.btn-steel-blue').addEventListener('click', () => {
-    saveStudyGoal()
-})
-
-// function setPlaceholderFromFirestore() {
-//     const uid = firebase.auth().currentUser.uid;
-//     // console.log(uid);
-//     // Retrieve study goal value from Firestore
-//     firebase.firestore().collection("users").doc(uid).get()
-//     .then((doc) => {
-//         if (doc.exists) {
-//             const studygoal = doc.data().studygoal;
-//             // Set study goal value as placeholder
-//             document.getElementById("studyHourInput").placeholder = studygoal;
-//         } else {
-//             console.log("No study goal found for the user.");
-//         }
-//     })
-//     .catch((error) => {
-//         console.error("Error getting study goal from Firestore: ", error);
-//     });
-// }
-// setPlaceholderFromFirestore()

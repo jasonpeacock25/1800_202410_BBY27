@@ -22,18 +22,29 @@ var uiConfig = {
           email: user.email,    //with authenticated user's ID (user.uid)
           school: "BCIT",
           major: "CST",
-          set: "D",
-          studyHour: 3,
-          default_monday: ["", "", "COMP1712", "COMP1712", "", "COMP1510 LAB", "COMP1510 LAB", "COMP1510", "", ""],
-          default_tuesday: ["COMP1800", "COMP1800", "COMP1712 LAB", "COMP1712 LAB", "", "COMP1113 LAB", "COMP1113 LAB", "COMP1116", "COMP1116", ""],
-          default_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
-          default_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
-          default_friday: ["", "", "COMM1116", "COMM1116", "", "COMP1113", "COMP1113", "", "", ""],
-          active_monday: ["", "", "COMP1712", "COMP1712", "", "COMP1510 LAB", "COMP1510 LAB", "COMP1510", "", ""],
-          active_tuesday: ["COMP1800", "COMP1800", "COMP1712 LAB", "COMP1712 LAB", "", "COMP1113 LAB", "COMP1113 LAB", "COMP1116", "COMP1116", ""],
-          active_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
-          active_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
-          active_friday: ["", "", "COMM1116", "COMM1116", "", "COMP1113", "COMP1113", "", "", ""]
+          set: "",
+          studyHour: 0,
+          default_monday: ["", "", "", "", "", "", "", "", "", ""],
+          default_tuesday: ["", "", "", "", "", "", "", "", "", ""],
+          default_wednesday: ["", "", "", "", "", "", "", "", "", ""],
+          default_thursday: ["", "", "", "", "", "", "", "", "", ""],
+          default_friday: ["", "", "", "", "", "", "", "", "", ""],
+          active_monday: ["", "", "", "", "", "", "", "", "", ""],
+          active_tuesday: ["", "", "", "", "", "", "", "", "", ""],
+          active_wednesday: ["", "", "", "", "", "", "", "", "", ""],
+          active_thursday: ["", "", "", "", "", "", "", "", "", ""],
+          active_friday: ["", "", "", "", "", "", "", "", "", ""]
+
+          // default_monday: ["", "", "COMP 1712", "COMP 1712", "", "COMP 1510 LAB", "COMP 1510 LAB", "COMP 1510", "", ""],
+          // default_tuesday: ["COMP 1800", "COMP 1800", "COMP 1712 LAB", "COMP 1712 LAB", "", "COMP 1113 LAB", "COMP 1113 LAB", "COMM 1116", "COMM 1116", ""],
+          // default_wednesday: ["", "", "COMP 1100", "COMP 1537 LAB", "COMP 1537 LAB", "COMP 1510", "", "", "", ""],
+          // default_thursday: ["", "COMP 1800 LAB", "COMP 1800 LAB", "COMP 1510", "", "COMP 1537", "COMP 1537", "COMP 1510 LAB", "COMP 1510 TUT", ""],
+          // default_friday: ["", "", "COMM 1116 LAB", "COMM 1116 LAB", "", "COMP 1113", "COMP 1113", "", "", ""],
+          // active_monday: ["", "", "COMP 1712", "COMP 1712", "", "COMP 1510 LAB", "COMP 1510 LAB", "COMP 1510", "", ""],
+          // active_tuesday: ["COMP 1800", "COMP 1800", "COMP 1712 LAB", "COMP 1712 LAB", "", "COMP 1113 LAB", "COMP 1113 LAB", "COMM 1116", "COMM 1116", ""],
+          // active_wednesday: ["", "", "COMP 1100", "COMP 1537 LAB", "COMP 1537 LAB", "COMP 1510", "", "", "", ""],
+          // active_thursday: ["", "COMP 1800 LAB", "COMP 1800 LAB", "COMP 1510", "", "COMP 1537", "COMP 1537", "COMP 1510 LAB", "COMP 1510 TUT", ""],
+          // active_friday: ["", "", "COMM 1116 LAB", "COMM 1116 LAB", "", "COMP 1113", "COMP 1113", "", "", ""]
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("main.html");       //re-direct to main.html after signup
