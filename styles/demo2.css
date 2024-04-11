@@ -27,7 +27,7 @@
 }
 
 .custom-table-cell {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,23 +47,44 @@
 }
 
 .school {
-    background-color: rgba(162, 153, 153, 0.648);
+    background-color: rgba(123, 119, 119, 0.5);
 }
 
+.today-school {
+    
+    background-color: rgba(123, 119, 119, 0.7);
+}
 .study {
+    background-color: rgba(231, 171, 81, 0.5);
+}
+
+.today-study {
+    
     background-color: rgb(231, 171, 81);
-    cursor: pointer;
 }
 
 .studyDone {
-   text-decoration: line-through;
+    text-decoration: line-through;
     cursor: pointer;
+    background-color: rgb(180, 204, 223);
 }
 
 .night {
     background-color: rgb(255, 255, 255);
+
 }
 
 .nightExceed {
     background-color: rgb(255, 67, 67);
+}
+
+.today-highlight {
+    font-weight: 500;
+    border: 2px solid black;
+    
+}
+
+#done-today {
+    margin-top: 10px;
+    padding: 10px;
 }

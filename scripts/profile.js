@@ -64,7 +64,7 @@ function saveUserInfo() {
 
     //b) update user's default schedule in Firestore if set was changed
 
-    setCollection = db.collection("sets").doc("A");
+    setCollection = db.collection("sets").doc(userSet);
 
     setCollection.get().then(setDoc => {
         let existingSetValue = userSet;
@@ -94,3 +94,47 @@ function saveUserInfo() {
     //d) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
 }
+
+
+
+// Function to save study goal input to Firestore
+function saveStudyGoal() {
+    const uid = firebase.auth().currentUser.uid;
+    console.log("uid is" + uid);
+    const studyHourInput = document.getElementById("studyHourInput").value;
+
+    // Save input value to Firestore
+    firebase.firestore().collection("users").doc(uid).set({
+        studygoal: studyHourInput
+    })
+        .then(() => {
+            console.log("Study goal input saved successfully!");
+        })
+        .catch((error) => {
+            console.error("Error saving study goal input: ", error);
+        });
+}
+
+document.querySelector('.btn-steel-blue').addEventListener('click', () => {
+    saveStudyGoal()
+})
+
+// function setPlaceholderFromFirestore() {
+//     const uid = firebase.auth().currentUser.uid;
+//     // console.log(uid);
+//     // Retrieve study goal value from Firestore
+//     firebase.firestore().collection("users").doc(uid).get()
+//     .then((doc) => {
+//         if (doc.exists) {
+//             const studygoal = doc.data().studygoal;
+//             // Set study goal value as placeholder
+//             document.getElementById("studyHourInput").placeholder = studygoal;
+//         } else {
+//             console.log("No study goal found for the user.");
+//         }
+//     })
+//     .catch((error) => {
+//         console.error("Error getting study goal from Firestore: ", error);
+//     });
+// }
+// setPlaceholderFromFirestore()
