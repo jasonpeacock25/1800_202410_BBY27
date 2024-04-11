@@ -24,6 +24,7 @@ var uiConfig = {
           major: "CST",
           set: "",
           studyHour: 0,
+          hoursDone: 0,
           default_monday: ["", "", "", "", "", "", "", "", "", ""],
           default_tuesday: ["", "", "", "", "", "", "", "", "", ""],
           default_wednesday: ["", "", "", "", "", "", "", "", "", ""],

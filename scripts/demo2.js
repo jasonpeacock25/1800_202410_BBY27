@@ -74,12 +74,12 @@ function populateTime(times) {
     }
     table.innerHTML += div
 }
+let startIndex
+let endIndex
 
 function populateData() {
     let today = returnToday()
     // console.log(today);
-    let startIndex
-    let endIndex
     switch (today) {
         case "Monday":
             startIndex = 0
@@ -165,44 +165,54 @@ function populateData() {
 
 
 }
-
+let hoursStudied = 0;
 function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     // console.log(index);
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
+
     // console.log(studyClass);
     // console.log(index);
     if (studyClass.includes('studyDone') && !studyClass.includes('nightExceed')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('today-study');
+        hoursStudied--;
+        // console.log(hoursStudied);
         // console.log("Changed from studyDone");
     } else if (studyClass.includes('today-study') && !studyClass.includes('nightExceed')) {
         // console.log('y');
         event.target.classList.remove('today-study');
         event.target.classList.add('studyDone');
+        hoursStudied++;
+        // console.log(hoursStudied);
         // console.log("Changed from studyDone");
-    } else if (studyClass.includes('nightExceed')) {
+    } else if (studyClass.includes('nightExceed') && studyClass.includes('today-study')) {
         // console.log('clicked');
         let hoursRequiredText = event.target.innerText;
         // console.log(hoursRequiredText);
         let originalNum = parseInt(hoursRequiredText.split(':')[1].trim());
         let hoursRequiredNumber = originalNum
 
-        
+
         // console.log(hoursRequiredNumber);
         if (hoursRequiredNumber > 1) {
             hoursRequiredNumber--;
             event.target.innerText = "Hours Required: " + hoursRequiredNumber
-
+            hoursStudied++;
+            // console.log(hoursStudied);
         } else if (hoursRequiredNumber == 1) {
             event.target.innerText = "Hours Required: 0"
             // event.target.classList.remove('nightExceed')
+            hoursStudied++;
+            // console.log(hoursStudied);
             event.target.classList.add('studyDone')
         } else if (hoursRequiredNumber == 0) {
             event.target.innerText = "Hours Required: " + event.target.getAttribute('data-hoursrequired')
             event.target.classList.add('nightExceed')
             event.target.classList.remove('studyDone')
+            hoursStudied -= event.target.getAttribute('data-hoursrequired')
+            // console.log(hoursStudied);
         }
 
     }
@@ -231,7 +241,49 @@ function returnToday() {
 
 const doneToday = document.querySelector('#done-today');
 function done() {
+
+    let today = returnToday()
+    // console.log(today);
+    let f
+    switch (today) {
+        case "Monday":
+
+            break
+        case "Tuesday":
+            startIndex = 10
+            endIndex = 19
+            break
+        case "Wednesday":
+            startIndex = 20
+            endIndex = 29
+            break
+        case "Thursday":
+            f = "active_thursday"
+            break
+        case "Friday":
+            startIndex = 40
+            endIndex = 49
+            break
+        default:
+            startIndex = null
+            endIndex = null
+
+    }
+
     doneToday.addEventListener('click', () => {
+        const auth = firebase.auth();
+        const user = auth.currentUser;
+
+         if (user) {
+        // Reference to the user's document
+        const userDocRef = firebase.firestore().collection("users").doc(user.uid);
+        console.log(user);
+        console.log(hoursStudied);
+        userDocRef.update({
+            studyHour : hoursStudied
+        })
+         }
+
         
     })
 }
