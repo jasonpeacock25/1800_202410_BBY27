@@ -273,18 +273,60 @@ function done() {
     doneToday.addEventListener('click', () => {
         const auth = firebase.auth();
         const user = auth.currentUser;
+        let userDocRef
+        let studyHour
+        // let hoursDone;
+        if (user) {
+            // Reference to the user's document
+            userDocRef = firebase.firestore().collection("users").doc(user.uid);
+            userDocRef.get().then((doc) => {
+                if (doc.exists) {
+                    // Access the studyHour field
+                    studyHour = doc.data().studyHour;
+                    // hoursDone = doc.data().hoursDone;
+                    // console.log(hoursDone);
+                    // console.log(studyHour);
+                } else {
+                    console.log("No such document!");
+                }
+            }).then(() => {
+                console.log(studyHour);
+                const myModal = bootstrap.Modal.getOrCreateInstance('#you-sure')
+                const saveChangesBtn = document.querySelector('.btn-primary');
+                const closeModalBtn = document.querySelector('.btn-secondary');
+                let label, body
+                if (hoursStudied >= studyHour) {
+                    label = "Great job"
+                    body = "See you tommorrow"
+                } else {
+                    label = "Are you sure? "
+                    body = "You didn't meet the goal"
+                }
+                document.querySelector('#modal-body').innerText = body;
+                document.querySelector('#modal-label').innerText = label;
+                myModal.show()
 
-         if (user) {
-        // Reference to the user's document
-        const userDocRef = firebase.firestore().collection("users").doc(user.uid);
-        console.log(user);
-        console.log(hoursStudied);
-        userDocRef.update({
-            studyHour : hoursStudied
-        })
-         }
+                saveChangesBtn.addEventListener('click', () => {
+                //    alert(hoursStudied)
+                firebase.firestore().collection("users").doc(user.uid).update({
+                        hoursDone: 1
+                        
+                    }).then(() => {
+                        console.log('Hours done updated successfully.');
+                        // Navigate to the main page after updating
+                        window.location.href = 'main.html';
+                    })
 
-        
+                })
+
+                closeModalBtn.addEventListener('click', () => {
+                    window.location.href = 'main.html';
+                })
+            })
+
+        }
+
+
     })
 }
 done()
