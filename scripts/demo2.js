@@ -119,18 +119,18 @@ function displayClickMessage(event) {
     let index = event.target.getAttribute('data-index');
     let content = event.target.innerHTML;
     let studyClass = event.target.getAttribute('class');
-    console.log(studyClass);
+    // console.log(studyClass);
     if (studyClass.includes('studyDone')) {
         event.target.classList.remove('studyDone');
         event.target.classList.add('study');
-        console.log("Changed from studyDone");
+        // console.log("Changed from studyDone");
     } else if (studyClass.includes('study')) {
         event.target.classList.remove('study');
         event.target.classList.add('studyDone');
-        console.log("Changed from studyDone");
+        // console.log("Changed from studyDone");
     }
-    console.log('#tableElement' + index);
-    console.log(content);
+    // console.log('#tableElement' + index);
+    // console.log(content);
 }
 
 
