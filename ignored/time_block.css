@@ -1,9 +1,0 @@
-.current_date {
-    width: 100vw;
-    font-size: 1.2em;
-}
-
-.current_date p {
-    display: flex;
-    justify-content: center;
-}

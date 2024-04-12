@@ -50,8 +50,6 @@ Content of the project folder:
 ├── active-schedule.json    # A json file of active-schedule 
 ├── add_event.html          # Add event HTML file, this is a page to add new event, also to set study goal
 ├── default-schedule.json   # A json file of default schedule 
-├── demo.html               #
-├── demo2.html              #
 ├── main.html               # Main HTML file, the main page 
 ├── profile.html            # User profile HTML file, user can update their personal information
 ├── README.md
@@ -65,24 +63,19 @@ It has the following subfolders and files:
 ├── scripts                 # Folder for scripts
     /add_event.js           # Connect to add event HTML
     /add_quote.js           # User login
-    /authentication.js      # 
-    /cal.js                 # 
-    /calendar.js            # 
-    /demo.js                # 
-    /demo2.js               # 
+    /authentication.js      # Authenticate
+    /demo2.js               # Populate data from db
     /firebaseAPI.js         # Firebase API
     /main.js                # Connect to main page
     /profile.js             # Connect to profile HTML
     /report.js              # Connect to report HTML
     /script.js              # Log out function
     /skeleton.js            # For navbars
-    /time_block.js          # 
 ├── styles                  # Folder for styles
     /about_us.css           # Connect to about us page
     /add_event.css          # Connect to add event page
     /calendar.css           # Connect to calendar
-    /demo.css               # 
-    /demo2.css              #
+    /demo2.css              # Style calendar in main page
     /profile.css            # Connect to profile page
     /report.css             # Connect to report page
     /style.css              # Main styles
