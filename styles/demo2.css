@@ -1,9 +1,3 @@
-/* body {
-    border: 1px solid;
-} */
-
-#greeting-container {}
-
 #updatedCalendar {
     padding: 0;
     margin: 0;
@@ -51,15 +45,16 @@
 }
 
 .today-school {
-    
+
     background-color: rgba(123, 119, 119, 0.7);
 }
+
 .study {
     background-color: rgba(231, 171, 81, 0.5);
 }
 
 .today-study {
-    
+
     background-color: rgb(231, 171, 81);
 }
 
@@ -81,7 +76,7 @@
 .today-highlight {
     font-weight: 500;
     border: 2px solid black;
-    
+
 }
 
 #done-today {

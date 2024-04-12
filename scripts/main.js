@@ -28,7 +28,7 @@ function insertNameFromFirestore() {
 }
 insertNameFromFirestore();
 
-function tempArrayMaker(){
+function tempArrayMaker() {
     let user = firebase.auth().currentUser;
     if (user) {
         db.collection("users").doc(user.uid).update({         //write to firestore. We are using the UID for the ID in users collection
@@ -43,7 +43,7 @@ function tempArrayMaker(){
             active_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
             active_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
             active_friday: ["", "", "COMM1116 LAB", "COMM1116 LAB", "", "COMP1113", "COMP1113", "", "", ""]
-    })
+        })
     }
 }
 

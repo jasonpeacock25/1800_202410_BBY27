@@ -69,15 +69,6 @@
         </form>
 
         <div class="form-group alice-blue">
-            <!-- <h5 class="profile-title">Settings</h5>
-            <form class="event-type profile-repeat" name="repeatFrequency">
-                <label for="repeat">Color scheme:</label>
-                <select name="repeat">
-                    <option value="never">Default</option>
-                    <option value="everyday">Customize</option>
-                </select>
-            </form> -->
-
             <div class="study-goal">
                 <label for="">Study goal:</label>
                 <div class="study-hours">
@@ -88,7 +79,7 @@
 
         </div>
         <div class="d-flex justify-content-center mt-5">
-            <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+            <button type="button" class="btn btn-dark" onclick="editUserInfo()">Edit</button>
             <span style="width: 10px"></span>
             <button type="button" class="btn  btn-steel-blue" onclick="saveUserInfo()">Save</button>
         </div>
@@ -99,44 +90,27 @@
         </form>
     </div>
 
-    <!-- our own footer goes here-->
-    <!-- <nav id="footerPlaceholder"></nav> -->
 
-
-    <!-- Button trigger modal -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <!-- <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Confirmation box</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div> -->
-        <div class="modal-body">
-          Updated successfully
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Updated successfully
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="modal-close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="modal-close" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        </div>
-      </div>
     </div>
-  </div>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
     <script src="./scripts/script.js"></script>
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/profile.js"></script>
-
-    <!-- <script src="./scripts/main.js"></script> -->
 
     <script>
         const handleLogout = () => {
