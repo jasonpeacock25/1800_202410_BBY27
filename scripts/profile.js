@@ -72,7 +72,7 @@ function saveUserInfo() {
     setCollection = db.collection("sets").doc(userSet);
 
     setCollection.get().then(setDoc => {
-        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet =="C" || userSet == "D" || userSet == "CLEAR")) {
+        if (userSet != existingSet && (userSet == "A" || userSet == "B" || userSet == "C" || userSet == "D" || userSet == "CLEAR")) {
             console.log(existingSet);
             currentUser.update({
                 active_monday: setDoc.data().default_monday,
@@ -132,9 +132,9 @@ document.querySelector('.btn-steel-blue').addEventListener('click', () => {
 
 })
 
-document.querySelector('#modal-close').addEventListener('click', ()=> {
+document.querySelector('#modal-close').addEventListener('click', () => {
     window.location.href = 'main.html';
-}) 
+})
 
 // function setPlaceholderFromFirestore() {
 //     const uid = firebase.auth().currentUser.uid;

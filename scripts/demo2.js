@@ -307,10 +307,10 @@ function done() {
                 myModal.show()
 
                 saveChangesBtn.addEventListener('click', () => {
-                //    alert(hoursStudied)
-                firebase.firestore().collection("users").doc(user.uid).update({
+                    //    alert(hoursStudied)
+                    firebase.firestore().collection("users").doc(user.uid).update({
                         hoursDone: 1
-                        
+
                     }).then(() => {
                         console.log('Hours done updated successfully.');
                         // Navigate to the main page after updating
