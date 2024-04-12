@@ -147,7 +147,7 @@ function populateData() {
         } else {
             countBlocks++;
         }
-
+        
         if (startIndex <= j && j <= endIndex) {
             div.classList.remove('school')
             div.classList.add('today-highlight')
@@ -307,14 +307,16 @@ function done() {
                 myModal.show()
 
                 saveChangesBtn.addEventListener('click', () => {
-                //    alert(hoursStudied)
-                firebase.firestore().collection("users").doc(user.uid).update({
-                        hoursDone: 1
-                        
+                    //    alert(hoursStudied)
+                    firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid).update({
+                        hoursDone: hoursStudied
+
                     }).then(() => {
                         console.log('Hours done updated successfully.');
                         // Navigate to the main page after updating
                         window.location.href = 'main.html';
+
+                        
                     })
 
                 })
