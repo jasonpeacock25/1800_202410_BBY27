@@ -28,27 +28,6 @@ function insertNameFromFirestore() {
 }
 insertNameFromFirestore();
 
-function tempArrayMaker() {
-    let user = firebase.auth().currentUser;
-    if (user) {
-        db.collection("users").doc(user.uid).update({         //write to firestore. We are using the UID for the ID in users collection
-            default_monday: ["", "", "COMP1712", "COMP1712", "", "COMP1510 LAB", "COMP1510 LAB", "COMP1510", "", ""],
-            default_tuesday: ["COMP1800", "COMP1800", "COMP1712 LAB", "COMP1712 LAB", "", "COMP1113", "COMP1113", "COMM1116", "COMM1116", ""],
-            default_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
-            default_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
-            default_friday: ["", "", "COMM1116 LAB", "COMM1116 LAB", "", "COMP1113", "COMP1113", "", "", ""],
-
-            active_monday: ["", "", "COMP1712", "COMP1712", "", "COMP1510 LAB", "COMP1510 LAB", "COMP1510", "", ""],
-            active_tuesday: ["COMP1800", "COMP1800", "COMP1712 LAB", "COMP1712 LAB", "", "COMP1113", "COMP1113", "COMM1116", "COMM1116", ""],
-            active_wednesday: ["", "", "COMP1100", "COMP1537 LAB", "COMP1537 LAB", "COMP1510", "", "", "", ""],
-            active_thursday: ["", "COMP1800 LAB", "COMP1800 LAB", "COMP1510", "", "COMP1537", "COMP1537", "COMP1510 LAB", "COMP1510 TUT", ""],
-            active_friday: ["", "", "COMM1116 LAB", "COMM1116 LAB", "", "COMP1113", "COMP1113", "", "", ""]
-        })
-    }
-}
-
-const scheduleRef = firebase.firestore().collection("schedules");
-
 
 
 
