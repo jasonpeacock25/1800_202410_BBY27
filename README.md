@@ -1,8 +1,7 @@
 reprer# Project Title
 
 ## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+Team #27 is developing a calendar web application to help students to receive value from the time spent entering data, and visualize progress and improvement over time, unlike memorizing tasks or using physical calendars.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
